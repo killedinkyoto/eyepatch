@@ -15,11 +15,14 @@
 - `serve.mjs` lives in the project root. Start it in the background before taking any screenshots.
 - If the server is already running, do not start a second instance.
 
+## Setup (once per machine)
+- Install Node from https://nodejs.org (LTS). Then in the project root: `npm install puppeteer` (downloads its own bundled Chromium — no manual browser paths needed, works on Mac & Windows).
+
 ## Screenshot Workflow
-- Puppeteer is installed at `C:/Users/nateh/AppData/Local/Temp/puppeteer-test/`. Chrome cache is at `C:/Users/nateh/.cache/puppeteer/`.
 - **Always screenshot from localhost:** `node screenshot.mjs http://localhost:3000`
 - Screenshots are saved automatically to `./temporary screenshots/screenshot-N.png` (auto-incremented, never overwritten).
 - Optional label suffix: `node screenshot.mjs http://localhost:3000 label` — saves as `screenshot-N-label.png`
+- Mobile viewport (iPhone 390px): add `--mobile`, e.g. `node screenshot.mjs http://localhost:3000 hero --mobile`
 - `screenshot.mjs` lives in the project root. Use it as-is.
 - After screenshotting, read the PNG from `temporary screenshots/` with the Read tool — Claude can see and analyze the image directly.
 - When comparing, be specific: "heading is 32px but reference shows ~24px", "card gap is 16px but should be 24px"
