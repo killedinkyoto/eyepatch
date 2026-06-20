@@ -1,0 +1,1119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Rejouva France Patches — Clinical-Grade Under-Eye Restoration</title>
+<meta name="description" content="Medical-grade PDRN + ultra-low molecular weight Pink Collagen (100–243 Da) in a non-slip hydrogel. Drains morning fluid. Rebuilds from within. Hands-free." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,ital,wght@9..144,0,400;9..144,0,500;9..144,0,600;9..144,0,700;9..144,1,400;9..144,1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: { extend: {
+      colors: {
+        ink:'#211A24','ink-soft':'#3A2F3E',porcelain:'#FBF8F5',bone:'#F3EBE4',
+        blush:'#F4E6E4',rose:'#C17C84','rose-deep':'#9E4F58',gold:'#BFA06A',muted:'#6E626A',
+      },
+      fontFamily:{ display:['Fraunces','serif'], sans:['Inter','system-ui','sans-serif'] },
+      maxWidth:{ content:'1100px' },
+    }}
+  }
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { background: #FBF8F5; color: #211A24; -webkit-font-smoothing: antialiased; }
+  ::selection { background: #C17C84; color: #FBF8F5; }
+
+  /* Grain */
+  .grain::before { content:""; position:absolute; inset:0; pointer-events:none; opacity:.05; mix-blend-mode:multiply;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+
+  /* Atmosphere */
+  .atmos { background:
+      radial-gradient(120% 80% at 12% -10%, rgba(193,124,132,.16) 0, transparent 55%),
+      radial-gradient(90% 70% at 100% 0%, rgba(191,160,106,.10) 0, transparent 50%); }
+  .atmos-ink { background:
+      radial-gradient(100% 80% at 15% 0%, rgba(193,124,132,.22) 0, transparent 55%),
+      radial-gradient(90% 90% at 90% 100%, rgba(191,160,106,.14) 0, transparent 55%), #211A24; }
+
+  /* Shadows */
+  .shadow-soft { box-shadow: 0 1px 2px rgba(33,26,36,.04), 0 8px 24px -10px rgba(33,26,36,.12); }
+  .shadow-lift { box-shadow: 0 2px 4px rgba(158,79,88,.06), 0 18px 50px -18px rgba(33,26,36,.28); }
+  .shadow-glow { box-shadow: 0 10px 30px -12px rgba(158,79,88,.5); }
+
+  .hairline { border-color: rgba(33,26,36,.10); }
+  .eyebrow { font-size:.72rem; font-weight:600; letter-spacing:.22em; text-transform:uppercase; }
+  .display-tight { letter-spacing:-.03em; line-height:1.06; }
+
+  /* Buttons */
+  .btn { display:inline-flex; align-items:center; justify-content:center; gap:.5rem; font-weight:600;
+    border-radius:999px; transition:transform .4s cubic-bezier(.16,1,.3,1), box-shadow .4s, background .3s; will-change:transform; }
+  .btn:focus-visible { outline:2px solid #9E4F58; outline-offset:3px; }
+  .btn-primary { background:#9E4F58; color:#FBF8F5; }
+  .btn-primary:hover { transform:translateY(-2px); box-shadow:0 14px 34px -12px rgba(158,79,88,.6); background:#8C424B; }
+  .btn-primary:active { transform:translateY(0); }
+  .btn-ghost { background:transparent; color:#211A24; border:1px solid rgba(33,26,36,.18); }
+  .btn-ghost:hover { transform:translateY(-2px); border-color:#9E4F58; color:#9E4F58; }
+
+  /* Bundle selector */
+  .bundle-option { cursor:pointer; border-radius:16px; border:2px solid rgba(33,26,36,.10);
+    background:#fff; transition:border-color .25s, background .25s, box-shadow .25s; }
+  .bundle-option:hover { border-color:rgba(158,79,88,.35); }
+  .bundle-option.selected { border-color:#9E4F58; background:#211A24; color:#FBF8F5; box-shadow:0 8px 28px -8px rgba(33,26,36,.45); }
+  .bundle-option.selected .bundle-label,
+  .bundle-option.selected .bundle-price,
+  .bundle-option.selected .bundle-per,
+  .bundle-option.selected .bundle-desc { color:#FBF8F5; }
+  .bundle-option.selected .bundle-was { color:rgba(251,248,245,.4); }
+  .bundle-option.selected .bundle-badge { background:#C17C84; color:#211A24; }
+  .bundle-label { color:#211A24; font-weight:600; font-size:13px; letter-spacing:.06em; text-transform:uppercase; }
+  .bundle-price { color:#211A24; }
+  .bundle-per { color:#6E626A; font-size:13px; }
+  .bundle-was { color:#6E626A; font-size:13px; text-decoration:line-through; }
+  .bundle-desc { color:#6E626A; font-size:12px; margin-top:2px; }
+  .bundle-badge { background:#9E4F58; color:#FBF8F5; font-size:10.5px; font-weight:700;
+    letter-spacing:.12em; text-transform:uppercase; padding:2px 8px; border-radius:999px; }
+
+  /* Collapsibles */
+  details > summary { list-style:none; cursor:pointer; }
+  details > summary::-webkit-details-marker { display:none; }
+  .chevron { transition:transform .35s cubic-bezier(.16,1,.3,1); flex-shrink:0; }
+  details[open] .chevron { transform:rotate(180deg); }
+  .collapsible-body { animation:collapseIn .35s cubic-bezier(.16,1,.3,1); }
+  @keyframes collapseIn { from { opacity:0; transform:translateY(-6px); } to { opacity:1; transform:none; } }
+
+  /* Sale pulse */
+  @keyframes salePulse { 0%,100% { opacity:1 } 50% { opacity:.6 } }
+  .sale-dot { animation:salePulse 1.4s ease-in-out infinite; }
+
+  /* Scroll reveal */
+  .reveal { opacity:0; transform:translateY(20px); transition:opacity .9s cubic-bezier(.16,1,.3,1), transform .9s cubic-bezier(.16,1,.3,1); }
+  .reveal.in { opacity:1; transform:none; }
+  @media (prefers-reduced-motion:reduce) {
+    .reveal { opacity:1!important; transform:none!important; }
+    html { scroll-behavior:auto; }
+  }
+
+  /* Video placeholder 9:16 */
+  .video-placeholder { aspect-ratio:9/16; }
+
+  /* Comparison table */
+  .comp-check { color:#9E4F58; font-weight:700; }
+  .comp-x { color:#6E626A; }
+  .comp-partial { color:#BFA06A; }
+  .comp-col-ours { background:rgba(158,79,88,.06); }
+
+  /* Mobile sticky */
+  .mobile-cta { box-shadow:0 -8px 24px -12px rgba(33,26,36,.25); }
+
+  /* Gallery */
+  .thumb-active { border-color:#9E4F58 !important; }
+
+  /* Stars */
+  .stars { color:#BFA06A; letter-spacing:.06em; }
+
+  @media (max-width:767px) {
+    body { padding-bottom:76px; }
+  }
+</style>
+</head>
+<body class="font-sans antialiased overflow-x-hidden">
+
+<!-- Summer Sale Announcement Bar -->
+<div class="bg-rose-deep text-porcelain text-center py-3 px-4 relative z-50">
+  <div class="flex items-center justify-center flex-wrap gap-x-4 gap-y-1 text-[13.5px] font-600">
+    <span class="flex items-center gap-2">
+      <span class="sale-dot w-2 h-2 rounded-full bg-porcelain inline-block"></span>
+      Summer Sale — 50% Off Sitewide
+    </span>
+    <span class="text-porcelain/60">·</span>
+    <span>Sale ends in: <strong id="saleCountdown" class="text-porcelain font-700 tabular-nums">15:00</strong></span>
+    <span class="text-porcelain/60">·</span>
+    <span class="text-porcelain/80">Free express shipping on 3+ jars</span>
+  </div>
+</div>
+
+<!-- Sticky Nav -->
+<header class="sticky top-0 z-40 bg-porcelain/90 backdrop-blur border-b hairline">
+  <div class="max-w-content mx-auto px-5 sm:px-8 h-14 flex items-center justify-between">
+    <a href="#" class="font-display text-[20px] font-600 tracking-tight text-ink">
+      Rejouva<span class="text-rose">.</span>
+    </a>
+    <div class="flex items-center gap-4">
+      <span class="hidden sm:flex items-center gap-2 text-[13px] text-rose-deep font-600">
+        <span class="sale-dot w-1.5 h-1.5 rounded-full bg-rose-deep inline-block"></span>
+        Summer Sale — 50% Off
+      </span>
+      <a href="#bundles" class="btn btn-primary px-5 py-2.5 text-[13.5px]">Claim Sale →</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- ═══════════════════════════════════════════
+     PRODUCT SECTION
+═══════════════════════════════════════════ -->
+<section class="max-w-content mx-auto px-5 sm:px-8 py-10 sm:py-14">
+  <div class="grid lg:grid-cols-[1fr_1fr] gap-10 xl:gap-16 items-start">
+
+    <!-- MEDIA COLUMN -->
+    <div class="lg:sticky lg:top-24">
+      <!-- Main Image -->
+      <div class="relative rounded-2xl overflow-hidden shadow-lift bg-ink" id="mainImageWrap">
+        <img id="mainImage"
+          src="https://placehold.co/900x900/211A24/FBF8F5?text=Rejouva+France+Patches"
+          alt="Rejouva France Patches — clinical-grade under-eye hydrogel"
+          class="w-full object-cover" />
+        <div class="absolute inset-0 mix-blend-multiply pointer-events-none"
+          style="background:linear-gradient(150deg,rgba(193,124,132,.18),transparent 55%)"></div>
+        <!-- Sale badge -->
+        <div class="absolute top-4 left-4 bg-rose-deep text-porcelain text-[11px] font-700 tracking-wider uppercase px-3 py-1.5 rounded-full flex items-center gap-1.5">
+          <span class="sale-dot w-1.5 h-1.5 rounded-full bg-porcelain inline-block"></span>
+          50% Off Today
+        </div>
+      </div>
+      <!-- Thumbnails -->
+      <div class="grid grid-cols-4 gap-3 mt-3">
+        <button onclick="setImage(this,'https://placehold.co/900x900/211A24/FBF8F5?text=Rejouva+Jar','Rejouva France Patches jar')"
+          class="rounded-xl overflow-hidden border-2 thumb-active hairline shadow-soft aspect-square">
+          <img src="https://placehold.co/200x200/211A24/FBF8F5?text=Jar" alt="Product jar" class="w-full h-full object-cover" />
+        </button>
+        <button onclick="setImage(this,'https://placehold.co/900x900/F4E6E4/9E4F58?text=Worn+%E2%80%94+Hands-Free','Worn hands-free during morning routine')"
+          class="rounded-xl overflow-hidden border-2 hairline shadow-soft aspect-square">
+          <img src="https://placehold.co/200x200/F4E6E4/9E4F58?text=Worn" alt="Patches worn" class="w-full h-full object-cover" />
+        </button>
+        <button onclick="setImage(this,'https://placehold.co/900x900/3A2F3E/C17C84?text=500+Da+Science','500-Dalton barrier science')"
+          class="rounded-xl overflow-hidden border-2 hairline shadow-soft aspect-square">
+          <img src="https://placehold.co/200x200/3A2F3E/C17C84?text=500+Da" alt="Science visual" class="w-full h-full object-cover" />
+        </button>
+        <button onclick="setImage(this,'https://placehold.co/900x900/F3EBE4/211A24?text=15+Min+Results','15-minute results')"
+          class="rounded-xl overflow-hidden border-2 hairline shadow-soft aspect-square">
+          <img src="https://placehold.co/200x200/F3EBE4/211A24?text=15+Min" alt="15 minute results" class="w-full h-full object-cover" />
+        </button>
+      </div>
+      <!-- Trust bar -->
+      <div class="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 mt-5 text-[12px] text-muted">
+        <span class="flex items-center gap-1.5">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          30-Day Guarantee
+        </span>
+        <span class="flex items-center gap-1.5">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          Free Shipping on 3+
+        </span>
+        <span class="flex items-center gap-1.5">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+          Results in 15 min
+        </span>
+      </div>
+    </div>
+
+    <!-- INFO COLUMN -->
+    <div class="space-y-7">
+
+      <!-- Eyebrow + Title + Rating -->
+      <div>
+        <p class="eyebrow text-rose-deep mb-3">Periorbital Restorative System · France</p>
+        <h1 class="font-display display-tight text-[32px] sm:text-[40px] text-ink mb-4">
+          Rejouva France Patches
+        </h1>
+        <div class="flex flex-wrap items-center gap-x-4 gap-y-2 mb-1">
+          <div class="flex items-center gap-2">
+            <span class="stars text-[17px]">★★★★★</span>
+            <span class="font-600 text-[14px] text-ink">4.9</span>
+            <a href="#testimonials" class="text-[13.5px] text-rose-deep underline-offset-2 hover:underline">347 verified reviews</a>
+          </div>
+        </div>
+        <p class="text-[13px] text-muted">Clinical-grade · Non-slip hydrogel · 15 pairs per jar</p>
+      </div>
+
+      <!-- Price display -->
+      <div class="flex items-baseline gap-3">
+        <p class="font-display text-[38px] font-600 text-ink leading-none" id="displayPrice">$79</p>
+        <p class="text-[18px] text-muted line-through" id="displayWas">$158</p>
+        <span class="bg-rose-deep text-porcelain text-[11.5px] font-700 px-3 py-1 rounded-full tracking-wide">50% Off</span>
+      </div>
+
+      <!-- Benefits -->
+      <div class="space-y-3">
+        <p class="text-[13px] font-600 text-ink uppercase tracking-[.14em]">What it does</p>
+        <ul class="space-y-2.5">
+          <li class="flex items-start gap-3 text-[15px] text-ink/80">
+            <span class="mt-1 w-5 h-5 rounded-full bg-blush flex items-center justify-center flex-shrink-0">
+              <svg width="10" height="10" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#9E4F58" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <span>Drains pooled morning fluid via hydrostatic compression — reducing bags in 15 minutes</span>
+          </li>
+          <li class="flex items-start gap-3 text-[15px] text-ink/80">
+            <span class="mt-1 w-5 h-5 rounded-full bg-blush flex items-center justify-center flex-shrink-0">
+              <svg width="10" height="10" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#9E4F58" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <span>Clears dark vascular shadows via thermal vasoconstriction as the hydrogel cools</span>
+          </li>
+          <li class="flex items-start gap-3 text-[15px] text-ink/80">
+            <span class="mt-1 w-5 h-5 rounded-full bg-blush flex items-center justify-center flex-shrink-0">
+              <svg width="10" height="10" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#9E4F58" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <span>Delivers PDRN directly to your A2A receptors — triggering the Nucleotide Salvage Pathway for energy-efficient cellular repair</span>
+          </li>
+          <li class="flex items-start gap-3 text-[15px] text-ink/80">
+            <span class="mt-1 w-5 h-5 rounded-full bg-blush flex items-center justify-center flex-shrink-0">
+              <svg width="10" height="10" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#9E4F58" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <span>Pink Collagen at 100–243 Da — mathematically small enough to cross the 500-Da skin barrier and trigger a 184% increase in collagen synthesis</span>
+          </li>
+          <li class="flex items-start gap-3 text-[15px] text-ink/80">
+            <span class="mt-1 w-5 h-5 rounded-full bg-blush flex items-center justify-center flex-shrink-0">
+              <svg width="10" height="10" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#9E4F58" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <span>High-viscosity non-slip gel locks to the zygomatic arch — make coffee, pack lunches, answer emails. Completely hands-free.</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Mechanism blurb -->
+      <div class="bg-ink text-porcelain rounded-2xl p-5 relative overflow-hidden grain">
+        <p class="eyebrow text-rose mb-2">The short version</p>
+        <p class="text-[14.5px] text-porcelain/80 leading-relaxed">
+          The 500-Dalton Rule is why every cream you've tried failed. Your luxury eye cream's collagen weighs ~300,000 Da — it can't enter your skin, ever. Rejouva's active ingredients are engineered at 100–243 Da. They cross the barrier, reach your fibroblasts, and trigger repair the same way PDRN has been doing it in hospital burn units for decades. Mechanical drainage from above. Cellular rebuild from within.
+        </p>
+      </div>
+
+      <!-- Bundle Selector -->
+      <div id="bundles">
+        <div class="flex items-center justify-between mb-3">
+          <p class="text-[13px] font-600 text-ink uppercase tracking-[.14em]">Select your supply</p>
+          <span class="text-[12px] text-rose-deep font-600 flex items-center gap-1.5">
+            <span class="sale-dot w-1.5 h-1.5 rounded-full bg-rose-deep inline-block"></span>
+            50% off applied
+          </span>
+        </div>
+        <div class="space-y-3">
+          <!-- Option 1: Trial -->
+          <div class="bundle-option p-4" data-price="$79" data-was="$158" data-label="Trial · 1 Jar" onclick="selectBundle(this)">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <div class="w-5 h-5 rounded-full border-2 flex items-center justify-center bundle-radio" style="border-color:rgba(33,26,36,.25)">
+                  <div class="w-2.5 h-2.5 rounded-full bg-rose-deep opacity-0 bundle-radio-dot"></div>
+                </div>
+                <div>
+                  <p class="bundle-label">Trial · 1 Jar</p>
+                  <p class="bundle-desc">15 pairs · One morning trial</p>
+                </div>
+              </div>
+              <div class="text-right">
+                <p class="bundle-price font-display text-[22px] font-600 leading-none">$79</p>
+                <p class="bundle-was mt-0.5">$158</p>
+                <p class="bundle-per">$5.27/pair</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Option 2: Restore (Popular / Selected by default) -->
+          <div class="bundle-option selected p-4" data-price="$177" data-was="$354" data-label="Restore · 3 Jars" onclick="selectBundle(this)">
+            <div class="flex items-center justify-between mb-2.5">
+              <span class="bundle-badge">Most popular</span>
+              <span class="text-[11px] font-600" style="color:rgba(251,248,245,.6)">Save $177 vs retail</span>
+            </div>
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <div class="w-5 h-5 rounded-full border-2 flex items-center justify-center bundle-radio" style="border-color:#C17C84">
+                  <div class="w-2.5 h-2.5 rounded-full bg-rose bundle-radio-dot"></div>
+                </div>
+                <div>
+                  <p class="bundle-label">Restore · 3 Jars</p>
+                  <p class="bundle-desc" style="color:rgba(251,248,245,.55)">45 pairs · 6-week protocol</p>
+                </div>
+              </div>
+              <div class="text-right">
+                <p class="bundle-price font-display text-[22px] font-600 leading-none">$177</p>
+                <p class="bundle-was mt-0.5">$354</p>
+                <p class="bundle-per" style="color:rgba(251,248,245,.55)">$59/jar · $3.93/pair</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Option 3: Renew -->
+          <div class="bundle-option p-4" data-price="$294" data-was="$588" data-label="Renew · 6 Jars" onclick="selectBundle(this)">
+            <div class="flex items-center justify-between mb-2.5">
+              <span class="bundle-badge" style="background:#BFA06A;color:#211A24">Best value</span>
+              <span class="text-[11px] text-muted font-600">Save $294 vs retail</span>
+            </div>
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <div class="w-5 h-5 rounded-full border-2 flex items-center justify-center bundle-radio" style="border-color:rgba(33,26,36,.25)">
+                  <div class="w-2.5 h-2.5 rounded-full bg-rose-deep opacity-0 bundle-radio-dot"></div>
+                </div>
+                <div>
+                  <p class="bundle-label">Renew · 6 Jars</p>
+                  <p class="bundle-desc">90 pairs · Full restoration cycle</p>
+                </div>
+              </div>
+              <div class="text-right">
+                <p class="bundle-price font-display text-[22px] font-600 leading-none">$294</p>
+                <p class="bundle-was mt-0.5">$588</p>
+                <p class="bundle-per">$49/jar · $3.27/pair</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Countdown + Add to Cart -->
+      <div>
+        <div class="flex items-center gap-3 mb-3">
+          <p class="text-[13px] text-muted">Sale price expires in:</p>
+          <span class="bg-ink text-porcelain font-display text-[18px] font-600 px-3 py-1.5 rounded-lg tabular-nums" id="cartCountdown">15:00</span>
+        </div>
+        <button class="btn btn-primary w-full py-4 text-[16px] gap-2.5" onclick="handleAddToCart()">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          Add to Cart — <span id="ctaPrice">$177</span>
+        </button>
+        <p class="text-center text-[12px] text-muted mt-2.5">Secure checkout · SSL encrypted · No auto-subscribe</p>
+      </div>
+
+      <!-- Guarantee Card -->
+      <div class="rounded-2xl border-2 p-5 relative overflow-hidden" style="border-color:rgba(191,160,106,.4);background:linear-gradient(135deg,rgba(191,160,106,.06),transparent 60%)">
+        <div class="flex items-start gap-4">
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0" style="background:rgba(191,160,106,.15)">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#BFA06A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div>
+            <p class="font-600 text-[15px] text-ink mb-1">30-Day Clinical Performance Guarantee</p>
+            <p class="text-[13.5px] text-ink/70 leading-relaxed">If your periorbital appearance hasn't measurably improved after 30 days of consistent daily use, we will refund every cent. No forms. No photographs. One email. This is what confidence in a formula looks like.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Collapsibles -->
+      <div class="space-y-0 border hairline rounded-2xl overflow-hidden divide-y hairline">
+
+        <!-- Ingredients -->
+        <details class="group">
+          <summary class="flex items-center justify-between gap-4 px-5 py-4 hover:bg-bone/50 transition-colors">
+            <span class="font-600 text-[14.5px] text-ink">Ingredients</span>
+            <svg class="chevron w-4 h-4 text-muted flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+          </summary>
+          <div class="collapsible-body px-5 py-4 bg-bone/30">
+            <p class="text-[13px] font-600 text-rose-deep uppercase tracking-[.12em] mb-3">Active</p>
+            <ul class="text-[14px] text-ink/75 space-y-1.5 mb-4">
+              <li>· Polydeoxyribonucleotide (PDRN), &gt;95% purified, salmon milt (<em>Oncorhynchus mykiss</em>)</li>
+              <li>· Ultra-Low Molecular Weight Pink Collagen (100–243 Da)</li>
+            </ul>
+            <p class="text-[13px] font-600 text-muted uppercase tracking-[.12em] mb-3">Supporting</p>
+            <ul class="text-[14px] text-ink/75 space-y-1.5 mb-4">
+              <li>· High-viscosity non-slip hydrogel matrix (non-sensitizing polymer base)</li>
+              <li>· Sodium Hyaluronate (hydration retention)</li>
+              <li>· Glycerin (humectant)</li>
+              <li>· Allantoin (barrier soothing)</li>
+              <li>· Panthenol / Vitamin B5 (barrier support)</li>
+            </ul>
+            <p class="text-[12.5px] text-muted leading-relaxed">Free of: retinoids, fragrances, active proteins, high-MW synthetic thickeners, parabens, alcohol. No ingredients that sting, pill, or cause milia.</p>
+          </div>
+        </details>
+
+        <!-- How to Use -->
+        <details class="group">
+          <summary class="flex items-center justify-between gap-4 px-5 py-4 hover:bg-bone/50 transition-colors">
+            <span class="font-600 text-[14.5px] text-ink">How to use</span>
+            <svg class="chevron w-4 h-4 text-muted flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+          </summary>
+          <div class="collapsible-body px-5 py-4 bg-bone/30">
+            <ol class="text-[14px] text-ink/75 space-y-3">
+              <li class="flex gap-3"><span class="font-display text-[18px] text-rose-deep font-600 leading-none mt-0.5 w-5 flex-shrink-0">1</span><span>Cleanse under-eye area. Pat completely dry — moisture weakens adhesion.</span></li>
+              <li class="flex gap-3"><span class="font-display text-[18px] text-rose-deep font-600 leading-none mt-0.5 w-5 flex-shrink-0">2</span><span>Remove patches using the included spatula, not your fingertips.</span></li>
+              <li class="flex gap-3"><span class="font-display text-[18px] text-rose-deep font-600 leading-none mt-0.5 w-5 flex-shrink-0">3</span><span>Apply below the eye, centered on the zygomatic arch. Press gently at the edges to lock in place.</span></li>
+              <li class="flex gap-3"><span class="font-display text-[18px] text-rose-deep font-600 leading-none mt-0.5 w-5 flex-shrink-0">4</span><span>Leave for 12–15 minutes. Get on with your morning. No need to lie still.</span></li>
+              <li class="flex gap-3"><span class="font-display text-[18px] text-rose-deep font-600 leading-none mt-0.5 w-5 flex-shrink-0">5</span><span>Remove. Tap in any remaining serum. Apply SPF, then concealer as usual. Expect a dramatically smoother base.</span></li>
+            </ol>
+            <p class="text-[12.5px] text-muted mt-4 leading-relaxed">Use once daily in the morning. Cumulative structural improvement appears over 4–8 weeks of consistent daily use. Daily use is not required for immediate drainage benefit — but it is required for long-term collagen rebuilding.</p>
+          </div>
+        </details>
+
+        <!-- FAQ -->
+        <details class="group">
+          <summary class="flex items-center justify-between gap-4 px-5 py-4 hover:bg-bone/50 transition-colors">
+            <span class="font-600 text-[14.5px] text-ink">Frequently asked questions</span>
+            <svg class="chevron w-4 h-4 text-muted flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+          </summary>
+          <div class="collapsible-body px-5 py-4 bg-bone/30 space-y-4">
+            <div>
+              <p class="font-600 text-[14px] text-ink mb-1">How many patches are in each jar?</p>
+              <p class="text-[13.5px] text-ink/70">15 pairs (30 individual patches) per jar. Each pair treats both under-eyes simultaneously for one morning session.</p>
+            </div>
+            <div>
+              <p class="font-600 text-[14px] text-ink mb-1">Is this safe if I have sensitive skin or rosacea?</p>
+              <p class="text-[13.5px] text-ink/70">Yes. The PDRN is purified at &gt;95% purity — free of proteins that trigger immune responses. There are no retinoids, fragrances, or high-dose Vitamin C. Formulated specifically for reactive periorbital skin.</p>
+            </div>
+            <div>
+              <p class="font-600 text-[14px] text-ink mb-1">Can I use these over Botox or filler?</p>
+              <p class="text-[13.5px] text-ink/70">Consult your injector. As a general guideline, wait at least 2 weeks post-treatment before using any topical patch in the periorbital area.</p>
+            </div>
+            <div>
+              <p class="font-600 text-[14px] text-ink mb-1">Will they actually stay on while I move?</p>
+              <p class="text-[13.5px] text-ink/70">Yes. The high-viscosity hydrogel matrix is engineered to grip the zygomatic arch. You can bend over, move quickly, and go about your routine. Mass-market patches use thin, low-viscosity serums that slide. Ours don't.</p>
+            </div>
+          </div>
+        </details>
+
+        <!-- Shipping -->
+        <details class="group">
+          <summary class="flex items-center justify-between gap-4 px-5 py-4 hover:bg-bone/50 transition-colors">
+            <span class="font-600 text-[14.5px] text-ink">Shipping &amp; returns</span>
+            <svg class="chevron w-4 h-4 text-muted flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+          </summary>
+          <div class="collapsible-body px-5 py-4 bg-bone/30">
+            <div class="space-y-3 text-[14px] text-ink/75">
+              <div class="flex justify-between items-start gap-4">
+                <span>Standard (5–7 business days)</span>
+                <span class="font-600 text-rose-deep flex-shrink-0">Free</span>
+              </div>
+              <div class="flex justify-between items-start gap-4">
+                <span>Express (2–3 business days)</span>
+                <span class="font-600 flex-shrink-0">Free on 3+ jars · $9.99 on 1 jar</span>
+              </div>
+              <div class="pt-2 border-t hairline text-[13px] text-muted leading-relaxed">
+                Ships from our EU fulfillment center. Orders placed before 2 PM (EST) ship same day. Returns are handled via our 30-day guarantee — one email, full refund, no questions.
+              </div>
+            </div>
+          </div>
+        </details>
+
+      </div>
+    </div>
+    <!-- / INFO COLUMN -->
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     VIDEO TESTIMONIALS
+═══════════════════════════════════════════ -->
+<section class="bg-ink grain relative overflow-hidden py-16 sm:py-20">
+  <div class="max-w-content mx-auto px-5 sm:px-8">
+    <div class="text-center mb-12 reveal">
+      <p class="eyebrow text-rose mb-4">Real results</p>
+      <h2 class="font-display display-tight text-[28px] sm:text-[38px] text-porcelain mb-3">
+        No filters. No staging.
+      </h2>
+      <p class="text-[15.5px] text-porcelain/60 max-w-lg mx-auto leading-relaxed">
+        Three executives who wore them on actual mornings, before actual meetings.
+      </p>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-5 max-w-3xl mx-auto">
+
+      <!-- Video 1 -->
+      <div class="reveal" style="transition-delay:.05s">
+        <div class="video-placeholder relative rounded-2xl overflow-hidden shadow-lift bg-ink-soft flex items-center justify-center border hairline cursor-pointer group">
+          <img src="https://placehold.co/405x720/3A2F3E/C17C84?text=%E2%96%B6" alt="Video testimonial — Catherine R., Management Consultant" class="absolute inset-0 w-full h-full object-cover" />
+          <div class="absolute inset-0" style="background:linear-gradient(to top, rgba(33,26,36,.8), transparent 50%)"></div>
+          <div class="absolute inset-0 flex items-center justify-center">
+            <div class="w-14 h-14 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300" style="background:rgba(193,124,132,.85)">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="#FBF8F5"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            </div>
+          </div>
+          <div class="absolute bottom-4 left-4 right-4">
+            <p class="text-[13px] font-600 text-porcelain leading-tight">"I made breakfast, packed two lunches. Still on."</p>
+            <p class="text-[11.5px] text-porcelain/60 mt-1">Catherine R. — Management Consultant</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Video 2 -->
+      <div class="reveal" style="transition-delay:.12s">
+        <div class="video-placeholder relative rounded-2xl overflow-hidden shadow-lift bg-ink-soft flex items-center justify-center border hairline cursor-pointer group">
+          <img src="https://placehold.co/405x720/211A24/9E4F58?text=%E2%96%B6" alt="Video testimonial — Dr. Priya S., Medical Director" class="absolute inset-0 w-full h-full object-cover" />
+          <div class="absolute inset-0" style="background:linear-gradient(to top, rgba(33,26,36,.8), transparent 50%)"></div>
+          <div class="absolute inset-0 flex items-center justify-center">
+            <div class="w-14 h-14 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300" style="background:rgba(193,124,132,.85)">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="#FBF8F5"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            </div>
+          </div>
+          <div class="absolute bottom-4 left-4 right-4">
+            <p class="text-[13px] font-600 text-porcelain leading-tight">"Rosacea. Zero reaction. Three months daily."</p>
+            <p class="text-[11.5px] text-porcelain/60 mt-1">Dr. Priya S. — Medical Director</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Video 3 -->
+      <div class="reveal" style="transition-delay:.2s">
+        <div class="video-placeholder relative rounded-2xl overflow-hidden shadow-lift bg-ink-soft flex items-center justify-center border hairline cursor-pointer group">
+          <img src="https://placehold.co/405x720/3A2F3E/BFA06A?text=%E2%96%B6" alt="Video testimonial — Jennifer L., General Counsel" class="absolute inset-0 w-full h-full object-cover" />
+          <div class="absolute inset-0" style="background:linear-gradient(to top, rgba(33,26,36,.8), transparent 50%)"></div>
+          <div class="absolute inset-0 flex items-center justify-center">
+            <div class="w-14 h-14 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300" style="background:rgba(193,124,132,.85)">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="#FBF8F5"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            </div>
+          </div>
+          <div class="absolute bottom-4 left-4 right-4">
+            <p class="text-[13px] font-600 text-porcelain leading-tight">"$2,000 in eye creams. One week of Rejouva."</p>
+            <p class="text-[11.5px] text-porcelain/60 mt-1">Jennifer L. — General Counsel</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     FAQ SECTION (standalone)
+═══════════════════════════════════════════ -->
+<section class="py-16 sm:py-20 bg-bone">
+  <div class="max-w-[720px] mx-auto px-5 sm:px-8">
+    <div class="text-center mb-12 reveal">
+      <p class="eyebrow text-rose-deep mb-4">Questions, answered</p>
+      <h2 class="font-display display-tight text-[28px] sm:text-[38px] text-ink">
+        Everything you're wondering.
+      </h2>
+    </div>
+
+    <div class="space-y-0 border hairline rounded-2xl overflow-hidden divide-y hairline bg-white shadow-soft reveal">
+
+      <details class="group">
+        <summary class="flex items-center justify-between gap-4 px-6 py-5 cursor-pointer hover:bg-blush/40 transition-colors">
+          <span class="font-600 text-[15px] text-ink">How quickly will I see a difference?</span>
+          <svg class="chevron w-4 h-4 text-muted flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="collapsible-body px-6 py-4 border-t hairline bg-blush/20">
+          <p class="text-[14.5px] text-ink/75 leading-relaxed">The immediate drainage and vasoconstriction effect is visible within 12–15 minutes — this is the mechanical action of the hydrogel. The deeper PDRN and collagen rebuilding accumulates over 4–8 weeks of daily use. Most users report their colleagues stop commenting on their fatigue within the first 2 weeks.</p>
+        </div>
+      </details>
+
+      <details class="group">
+        <summary class="flex items-center justify-between gap-4 px-6 py-5 cursor-pointer hover:bg-blush/40 transition-colors">
+          <span class="font-600 text-[15px] text-ink">I've tried every eye cream. Why will this be different?</span>
+          <svg class="chevron w-4 h-4 text-muted flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="collapsible-body px-6 py-4 border-t hairline bg-blush/20">
+          <p class="text-[14.5px] text-ink/75 leading-relaxed">Because it is structurally different, not just marketed differently. Every cream you tried has the same problem: molecules too large to enter your skin. The 500-Dalton Rule governs what can and cannot cross the stratum corneum. Rejouva's active ingredients are engineered below that limit. They are not trying harder — they are doing something creams are physically incapable of doing.</p>
+        </div>
+      </details>
+
+      <details class="group">
+        <summary class="flex items-center justify-between gap-4 px-6 py-5 cursor-pointer hover:bg-blush/40 transition-colors">
+          <span class="font-600 text-[15px] text-ink">Is PDRN (salmon DNA) actually safe? Will I react?</span>
+          <svg class="chevron w-4 h-4 text-muted flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="collapsible-body px-6 py-4 border-t hairline bg-blush/20">
+          <p class="text-[14.5px] text-ink/75 leading-relaxed">Rejouva's PDRN is purified at &gt;95% purity — completely free of proteins and peptides that trigger immune responses. Salmon DNA is approximately 95% homologous to human DNA, so human cells recognize it as familiar rather than foreign. This formula contains no retinoids, no fragrances, no Vitamin C derivatives, no allergens. It was designed specifically for the thin, reactive skin of the periorbital zone.</p>
+        </div>
+      </details>
+
+      <details class="group">
+        <summary class="flex items-center justify-between gap-4 px-6 py-5 cursor-pointer hover:bg-blush/40 transition-colors">
+          <span class="font-600 text-[15px] text-ink">Will the patches dry out before I finish the jar?</span>
+          <svg class="chevron w-4 h-4 text-muted flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="collapsible-body px-6 py-4 border-t hairline bg-blush/20">
+          <p class="text-[14.5px] text-ink/75 leading-relaxed">No. Rejouva uses a clinical-grade airtight sealing mechanism specifically designed to prevent the volatile solvent evaporation that ruins most premium patch jars. Many users report the patches on day 14 feel identical to day 1. If yours ever dry out, contact us — we'll replace the jar, full stop.</p>
+        </div>
+      </details>
+
+      <details class="group">
+        <summary class="flex items-center justify-between gap-4 px-6 py-5 cursor-pointer hover:bg-blush/40 transition-colors">
+          <span class="font-600 text-[15px] text-ink">Will this pill or leave residue under my concealer?</span>
+          <svg class="chevron w-4 h-4 text-muted flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="collapsible-body px-6 py-4 border-t hairline bg-blush/20">
+          <p class="text-[14.5px] text-ink/75 leading-relaxed">No. The active ingredients are all engineered below 243 Da — they absorb completely into the skin. There is no high-molecular-weight polymer film remaining on the surface. After removal, the skin is plump, smooth, and hydrated — exactly the base high-end concealer is designed to sit on. It doesn't fight it. It improves it.</p>
+        </div>
+      </details>
+
+      <details class="group">
+        <summary class="flex items-center justify-between gap-4 px-6 py-5 cursor-pointer hover:bg-blush/40 transition-colors">
+          <span class="font-600 text-[15px] text-ink">My eye bags are genetic. Can anything actually help?</span>
+          <svg class="chevron w-4 h-4 text-muted flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="collapsible-body px-6 py-4 border-t hairline bg-blush/20">
+          <p class="text-[14.5px] text-ink/75 leading-relaxed">The structural tendency is genetic. The daily severity is environmental. Morning bags are primarily fluid — and fluid responds to mechanical drainage and vasoconstriction regardless of your genetics. Dark shadows come from dilated capillaries showing through thin skin — again, mechanical and vascular, not purely structural. Rejouva addresses both. Many users with lifelong "genetic" eye bags see meaningful daily improvement, even without changing the underlying bone structure.</p>
+        </div>
+      </details>
+
+      <details class="group">
+        <summary class="flex items-center justify-between gap-4 px-6 py-5 cursor-pointer hover:bg-blush/40 transition-colors">
+          <span class="font-600 text-[15px] text-ink">How is this different from the PDRN patches at Korean beauty stores?</span>
+          <svg class="chevron w-4 h-4 text-muted flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="collapsible-body px-6 py-4 border-t hairline bg-blush/20">
+          <p class="text-[14.5px] text-ink/75 leading-relaxed">Three differences: purity, collagen weight, and adhesion. Korean competitors typically use plant-derived V-PDRN (not salmon-sourced) with unspecified purity, often paired with Retinal that causes stinging and reported makeup pilling. Rejouva uses &gt;95% purified salmon PDRN — the same clinical grade used in hospital wound care — with Pink Collagen certified at 100–243 Da, and a high-viscosity non-slip matrix that doesn't require you to lie still. The comparison table below shows exactly how they stack up.</p>
+        </div>
+      </details>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     MECHANISM DEEP-DIVE
+═══════════════════════════════════════════ -->
+<section class="py-16 sm:py-20">
+  <div class="max-w-content mx-auto px-5 sm:px-8">
+    <div class="text-center mb-14 reveal">
+      <p class="eyebrow text-rose-deep mb-4">The science</p>
+      <h2 class="font-display display-tight text-[28px] sm:text-[40px] text-ink max-w-2xl mx-auto">
+        What's actually happening under your skin every morning.
+      </h2>
+    </div>
+
+    <div class="grid lg:grid-cols-2 gap-8 items-start mb-10">
+      <!-- Problem mechanism -->
+      <div class="reveal">
+        <div class="relative rounded-2xl overflow-hidden shadow-lift mb-6">
+          <img src="https://placehold.co/640x360/211A24/C17C84?text=The+Evening+Cortisol+Trap" alt="The Evening Cortisol Trap — blue light, cortisol, fluid pooling" class="w-full object-cover" />
+          <div class="absolute inset-0" style="background:linear-gradient(to top,rgba(33,26,36,.6),transparent 55%)"></div>
+          <div class="absolute inset-0 mix-blend-multiply" style="background:linear-gradient(150deg,rgba(193,124,132,.2),transparent 55%)"></div>
+          <p class="absolute bottom-4 left-5 text-[13px] text-porcelain/70">The Modern Periorbital Fatigue Complex</p>
+        </div>
+        <h3 class="font-display text-[22px] text-ink mb-3">The Evening Cortisol Trap</h3>
+        <div class="space-y-3 text-[15px] text-ink/75 leading-relaxed">
+          <p>Your device screens emit HEV blue light that signals your brain's master clock it's still daytime. Melatonin — the skin's overnight antioxidant — is suppressed for up to 90 minutes. Cortisol that should drop to its lowest point at midnight stays elevated instead.</p>
+          <p>Elevated cortisol keeps your periorbital capillaries dilated and leaky. When you sleep flat, with no movement in the orbicularis oculi muscle, fluid escapes into the loose tissue beneath your eye and has nowhere to go. By morning: bags. Deoxygenated blood pools in those capillaries, showing through your 0.5mm-thin under-eye skin as dark blue-purple shadows.</p>
+          <p>This is not a sleep problem. This is a structural, microvascular problem — the biological toll of a modern professional schedule.</p>
+        </div>
+      </div>
+
+      <!-- Solution mechanism -->
+      <div class="reveal" style="transition-delay:.1s">
+        <div class="relative rounded-2xl overflow-hidden shadow-lift mb-6">
+          <img src="https://placehold.co/640x360/3A2F3E/BFA06A?text=From+Burn+Units+to+the+Boardroom" alt="PDRN Nucleotide Salvage Pathway" class="w-full object-cover" />
+          <div class="absolute inset-0" style="background:linear-gradient(to top,rgba(33,26,36,.55),transparent 55%)"></div>
+          <p class="absolute bottom-4 left-5 text-[13px] text-porcelain/70">PDRN: From burn units to boardrooms</p>
+        </div>
+        <h3 class="font-display text-[22px] text-ink mb-3">Two systems. Simultaneous.</h3>
+        <div class="space-y-3 text-[15px] text-ink/75 leading-relaxed">
+          <p><strong class="text-ink">Above the skin:</strong> The hydrogel's weight applies continuous hydrostatic pressure to the periorbital tissue — mechanically pushing accumulated fluid back into your lymphatic system. As the hydrogel's water evaporates, surface temperature drops, triggering thermal vasoconstriction. Dilated capillaries narrow. Dark shadows reduce.</p>
+          <p><strong class="text-ink">Inside the skin:</strong> PDRN binds to adenosine A2A receptors on your dermal fibroblasts. It stops the inflammatory collagen breakdown. It feeds pre-built nucleotide fragments directly to your damaged, cortisol-stressed cells via the Nucleotide Salvage Pathway — the same biological shortcut hospital burn units have used for decades. Energy-efficient repair without the ATP cost of building DNA from scratch.</p>
+          <p><strong class="text-ink">Structural rebuild:</strong> Pink Collagen at 100–243 Da crosses the 500-Dalton barrier and signals fibroblasts to increase their own collagen and elastin production by 184%.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 500 Da Visual -->
+    <div class="rounded-2xl atmos-ink grain relative overflow-hidden text-porcelain p-7 sm:p-9 reveal">
+      <p class="eyebrow text-rose mb-6">Molecular weight vs. the 500 Da skin barrier</p>
+      <div class="space-y-5">
+        <div>
+          <div class="flex justify-between items-end mb-2">
+            <span class="text-[14px] text-porcelain/80">Native cream collagen (luxury eye creams)</span>
+            <span class="text-[13px] text-porcelain/50 font-600 tabular-nums">≈ 300,000 Da</span>
+          </div>
+          <div class="h-3 rounded-full bg-white/10">
+            <div class="h-full w-full rounded-full" style="background:linear-gradient(90deg,#3A2F3E,#6E626A)"></div>
+          </div>
+          <p class="text-[11.5px] text-porcelain/40 mt-1.5">Cannot enter skin — remains on surface. Can worsen morning puffiness by trapping fluid.</p>
+        </div>
+        <div>
+          <div class="flex justify-between items-end mb-2">
+            <span class="text-[14px] text-porcelain/80">Hydrolyzed collagen (most "advanced" serums)</span>
+            <span class="text-[13px] text-porcelain/50 font-600 tabular-nums">~3,000 Da</span>
+          </div>
+          <div class="h-3 rounded-full bg-white/10">
+            <div class="h-full rounded-full" style="width:45%;background:linear-gradient(90deg,#3A2F3E,#6E626A)"></div>
+          </div>
+          <p class="text-[11.5px] text-porcelain/40 mt-1.5">Still 6× too large. Partial penetration at best. Surface hydration only.</p>
+        </div>
+        <div class="relative py-2">
+          <div class="border-t-2 border-dashed" style="border-color:rgba(193,124,132,.6)"></div>
+          <span class="absolute -top-3 right-0 text-[11.5px] font-700 text-rose bg-ink-soft px-3 py-1 rounded-full">500 Da skin barrier · the limit</span>
+        </div>
+        <div>
+          <div class="flex justify-between items-end mb-2">
+            <span class="text-[14px] text-porcelain font-600">Rejouva Pink Collagen</span>
+            <span class="text-[13px] text-rose font-700 tabular-nums">100–243 Da ✓</span>
+          </div>
+          <div class="h-3 rounded-full bg-white/10 shadow-glow">
+            <div class="h-full rounded-full" style="width:14%;background:linear-gradient(90deg,#C17C84,#9E4F58);box-shadow:0 0 12px rgba(158,79,88,.5)"></div>
+          </div>
+          <p class="text-[11.5px] text-rose/70 mt-1.5">Crosses the barrier · reaches fibroblasts · triggers 184% increase in collagen synthesis</p>
+        </div>
+        <div>
+          <div class="flex justify-between items-end mb-2">
+            <span class="text-[14px] text-porcelain font-600">Rejouva PDRN (&gt;95% pure)</span>
+            <span class="text-[13px] text-gold font-700 tabular-nums">50–1,500 kDa fragments ✓</span>
+          </div>
+          <div class="h-3 rounded-full bg-white/10">
+            <div class="h-full rounded-full" style="width:22%;background:linear-gradient(90deg,#BFA06A,#9E4F58)"></div>
+          </div>
+          <p class="text-[11.5px] text-gold/60 mt-1.5">Binds adenosine A2A receptors · activates Nucleotide Salvage Pathway · stops collagen breakdown</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     TRUSTPILOT TESTIMONIALS
+═══════════════════════════════════════════ -->
+<section id="testimonials" class="py-16 sm:py-20 bg-bone">
+  <div class="max-w-content mx-auto px-5 sm:px-8">
+    <div class="text-center mb-12 reveal">
+      <p class="eyebrow text-rose-deep mb-3">Verified reviews</p>
+      <div class="flex items-center justify-center gap-3 mb-4">
+        <!-- Trustpilot-style badge -->
+        <div class="flex items-center gap-2 bg-white rounded-xl px-4 py-2.5 shadow-soft border hairline">
+          <div class="flex flex-col items-start">
+            <span class="text-[10px] font-700 text-ink uppercase tracking-wide">Trustpilot</span>
+            <span class="stars text-[15px]">★★★★★</span>
+          </div>
+          <div class="w-px h-8 bg-ink/10"></div>
+          <div>
+            <p class="font-display text-[22px] font-600 text-ink leading-none">4.9</p>
+            <p class="text-[11px] text-muted">347 reviews</p>
+          </div>
+        </div>
+      </div>
+      <h2 class="font-display display-tight text-[26px] sm:text-[36px] text-ink max-w-xl mx-auto">
+        From women who were as skeptical as you are right now.
+      </h2>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+
+      <!-- Testimonial 1: "will it slide" objection -->
+      <div class="reveal bg-white rounded-2xl p-6 border hairline shadow-soft flex flex-col gap-4">
+        <div class="flex items-center gap-1 stars text-[15px]">★★★★★</div>
+        <p class="text-[15px] text-ink/80 leading-relaxed flex-1">
+          "I was absolutely certain this would slide off the moment I moved. I put them on and made breakfast, packed two lunches, fed the dog, signed three permission slips. <strong class="text-ink">Still on.</strong> I've tested six or seven brands. This is the only one that actually locks onto my face."
+        </p>
+        <div>
+          <p class="font-600 text-[13.5px] text-ink">Catherine R.</p>
+          <p class="text-[12px] text-muted">Management Consultant, New York · Verified Purchase</p>
+        </div>
+      </div>
+
+      <!-- Testimonial 2: "reaction / rosacea" objection -->
+      <div class="reveal bg-ink text-porcelain rounded-2xl p-6 shadow-lift flex flex-col gap-4" style="transition-delay:.05s">
+        <div class="flex items-center gap-1 stars text-[15px]">★★★★★</div>
+        <p class="text-[15px] text-porcelain/80 leading-relaxed flex-1">
+          "I have rosacea and have reacted to nearly everything near my eyes. I was terrified. But the PDRN is purified free of proteins — nothing to react to. <strong class="text-porcelain">Three months daily. Not a single flare.</strong> My dermatologist actually asked me what I was using."
+        </p>
+        <div>
+          <p class="font-600 text-[13.5px] text-porcelain">Dr. Priya S.</p>
+          <p class="text-[12px] text-porcelain/50">Medical Director, London · Verified Purchase</p>
+        </div>
+      </div>
+
+      <!-- Testimonial 3: "genetic / nothing works" objection -->
+      <div class="reveal bg-white rounded-2xl p-6 border hairline shadow-soft flex flex-col gap-4" style="transition-delay:.1s">
+        <div class="flex items-center gap-1 stars text-[15px]">★★★★★</div>
+        <p class="text-[15px] text-ink/80 leading-relaxed flex-1">
+          "My mother has them. I was told surgery was the only real option. Two weeks of Rejouva and my colleague asked if I'd had a good weekend — <strong class="text-ink">not 'are you okay?' for the first time in years.</strong> That shift in how people read my face told me everything."
+        </p>
+        <div>
+          <p class="font-600 text-[13.5px] text-ink">Sarah K.</p>
+          <p class="text-[12px] text-muted">Senior Partner, Boston · Verified Purchase</p>
+        </div>
+      </div>
+
+      <!-- Testimonial 4: "makeup pilling" objection -->
+      <div class="reveal bg-blush/50 rounded-2xl p-6 border hairline flex flex-col gap-4" style="transition-delay:.05s">
+        <div class="flex items-center gap-1 stars text-[15px]">★★★★★</div>
+        <p class="text-[15px] text-ink/80 leading-relaxed flex-1">
+          "I destroyed an expensive concealer application with a Korean patch that left a film. I used Rejouva expecting the same thing. <strong class="text-ink">There was nothing — completely absorbed.</strong> My concealer sat better than it does without any patches at all. This is non-negotiable in my morning now."
+        </p>
+        <div>
+          <p class="font-600 text-[13.5px] text-ink">Alexandra M.</p>
+          <p class="text-[12px] text-muted">SVP Marketing, Deutsche Bank, Frankfurt · Verified Purchase</p>
+        </div>
+      </div>
+
+      <!-- Testimonial 5: "dries out / price" objection -->
+      <div class="reveal bg-white rounded-2xl p-6 border hairline shadow-soft flex flex-col gap-4" style="transition-delay:.1s">
+        <div class="flex items-center gap-1 stars text-[15px]">★★★★★</div>
+        <p class="text-[15px] text-ink/80 leading-relaxed flex-1">
+          "I've thrown away $75 jars of patches that dried out after the first dozen pairs. The Rejouva seal is different — clinical, airtight. I'm almost through my first jar using them daily and <strong class="text-ink">the patches are as saturated as day one.</strong> For what I've wasted on competitors, this is a bargain."
+        </p>
+        <div>
+          <p class="font-600 text-[13.5px] text-ink">Margot D.</p>
+          <p class="text-[12px] text-muted">Chief Operating Officer, Chicago · Verified Purchase</p>
+        </div>
+      </div>
+
+      <!-- Testimonial 6: "tried everything / creams don't work" objection -->
+      <div class="reveal bg-ink text-porcelain rounded-2xl p-6 shadow-lift flex flex-col gap-4" style="transition-delay:.15s">
+        <div class="flex items-center gap-1 stars text-[15px]">★★★★★</div>
+        <p class="text-[15px] text-porcelain/80 leading-relaxed flex-1">
+          "Three years of eye creams. $2,000+ easily. After one week of Rejouva I understood why they failed — they were always sitting on top of my skin. <strong class="text-porcelain">They literally couldn't get in.</strong> Once I understood the 500-Dalton rule, I stopped being angry at myself for the failures. And Rejouva is just the first thing that actually gets in."
+        </p>
+        <div>
+          <p class="font-600 text-[13.5px] text-porcelain">Jennifer L.</p>
+          <p class="text-[12px] text-porcelain/50">General Counsel, Fortune 500, San Francisco · Verified Purchase</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     COMPARISON TABLE
+═══════════════════════════════════════════ -->
+<section class="py-16 sm:py-20">
+  <div class="max-w-content mx-auto px-5 sm:px-8">
+    <div class="text-center mb-12 reveal">
+      <p class="eyebrow text-rose-deep mb-4">Head to head</p>
+      <h2 class="font-display display-tight text-[28px] sm:text-[38px] text-ink max-w-xl mx-auto">
+        Why every other patch in this category has a problem.
+      </h2>
+      <p class="text-[15px] text-muted mt-4 max-w-xl mx-auto leading-relaxed">These aren't opinions. These are documented failures from 1-star review mining across Sephora, Ulta, and Amazon.</p>
+    </div>
+
+    <div class="reveal overflow-x-auto rounded-2xl border hairline shadow-soft">
+      <table class="w-full text-left" style="min-width:680px">
+        <thead>
+          <tr class="border-b hairline">
+            <th class="px-5 py-4 text-[12.5px] font-600 text-muted uppercase tracking-[.12em] w-[200px]">Feature</th>
+            <th class="px-5 py-4 text-[12.5px] font-600 uppercase tracking-[.12em] comp-col-ours text-rose-deep">Rejouva France</th>
+            <th class="px-5 py-4 text-[12.5px] font-600 text-muted uppercase tracking-[.12em] bg-white">COSRX Peptide</th>
+            <th class="px-5 py-4 text-[12.5px] font-600 text-muted uppercase tracking-[.12em] bg-white">Abib PDRN</th>
+            <th class="px-5 py-4 text-[12.5px] font-600 text-muted uppercase tracking-[.12em] bg-white">Rodial Snake</th>
+            <th class="px-5 py-4 text-[12.5px] font-600 text-muted uppercase tracking-[.12em] bg-white">Peter Thomas Roth</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y hairline text-[13.5px]">
+          <tr>
+            <td class="px-5 py-3.5 font-600 text-ink bg-bone/40">PDRN source</td>
+            <td class="px-5 py-3.5 comp-col-ours"><span class="comp-check">✓</span> <span class="text-ink">&gt;95% purified salmon</span></td>
+            <td class="px-5 py-3.5 bg-white"><span class="comp-x">✗</span> <span class="text-muted">None</span></td>
+            <td class="px-5 py-3.5 bg-white"><span class="comp-partial">~</span> <span class="text-muted">Plant-based V-PDRN</span></td>
+            <td class="px-5 py-3.5 bg-white"><span class="comp-partial">~</span> <span class="text-muted">Salmon DNA, unspecified purity</span></td>
+            <td class="px-5 py-3.5 bg-white"><span class="comp-x">✗</span> <span class="text-muted">None</span></td>
+          </tr>
+          <tr>
+            <td class="px-5 py-3.5 font-600 text-ink bg-bone/40">Collagen MW</td>
+            <td class="px-5 py-3.5 comp-col-ours"><span class="comp-check">✓</span> <span class="text-ink">100–243 Da</span></td>
+            <td class="px-5 py-3.5 bg-white"><span class="comp-x">✗</span> <span class="text-muted">Unspecified</span></td>
+            <td class="px-5 py-3.5 bg-white"><span class="comp-partial">~</span> <span class="text-muted">100 Da collagen (some pilling)</span></td>
+            <td class="px-5 py-3.5 bg-white"><span class="comp-x">✗</span> <span class="text-muted">Syn-Ake peptide (not collagen)</span></td>
+            <td class="px-5 py-3.5 bg-white"><span class="comp-x">✗</span> <span class="text-muted">Hydrolyzed ~3,000 Da</span></td>
+          </tr>
+          <tr>
+            <td class="px-5 py-3.5 font-600 text-ink bg-bone/40">Passes 500 Da barrier</td>
+            <td class="px-5 py-3.5 comp-col-ours"><span class="comp-check font-700">✓ Yes</span></td>
+            <td class="px-5 py-3.5 bg-white"><span class="comp-x">✗</span> <span class="text-muted">No</span></td>
+            <td class="px-5 py-3.5 bg-white"><span class="comp-partial">~</span> <span class="text-muted">Partially</span></td>
+            <td class="px-5 py-3.5 bg-white"><span class="comp-x">✗</span> <span class="text-muted">No</span></td>
+            <td class="px-5 py-3.5 bg-white"><span class="comp-x">✗</span> <span class="text-muted">No</span></td>
+          </tr>
+          <tr>
+            <td class="px-5 py-3.5 font-600 text-ink bg-bone/40">Non-slip adhesion</td>
+            <td class="px-5 py-3.5 comp-col-ours"><span class="comp-check">✓</span> <span class="text-ink">High-viscosity matrix</span></td>
+            <td class="px-5 py-3.5 bg-white"><span class="comp-x">✗</span> <span class="text-muted">Slides — reported</span></td>
+            <td class="px-5 py-3.5 bg-white"><span class="comp-x">✗</span> <span class="text-muted">Slides — reported</span></td>
+            <td class="px-5 py-3.5 bg-white"><span class="comp-partial">~</span> <span class="text-muted">Moderate</span></td>
+            <td class="px-5 py-3.5 bg-white"><span class="comp-x">✗</span> <span class="text-muted">Slides — reported</span></td>
+          </tr>
+          <tr>
+            <td class="px-5 py-3.5 font-600 text-ink bg-bone/40">Stinging / irritation risk</td>
+            <td class="px-5 py-3.5 comp-col-ours"><span class="comp-check">✓</span> <span class="text-ink">None — no retinoids</span></td>
+            <td class="px-5 py-3.5 bg-white"><span class="comp-partial">~</span> <span class="text-muted">Some allergic reactions reported</span></td>
+            <td class="px-5 py-3.5 bg-white"><span class="comp-x text-[13px]">✗ High</span> <span class="text-muted text-[12px]">Retinal stinging, rosacea flares</span></td>
+            <td class="px-5 py-3.5 bg-white"><span class="comp-x">✗</span> <span class="text-muted">Heavy fragrance — eyes water</span></td>
+            <td class="px-5 py-3.5 bg-white"><span class="comp-partial">~</span> <span class="text-muted">Collagen film — short-lived tightening</span></td>
+          </tr>
+          <tr>
+            <td class="px-5 py-3.5 font-600 text-ink bg-bone/40">Makeup pilling</td>
+            <td class="px-5 py-3.5 comp-col-ours"><span class="comp-check">✓</span> <span class="text-ink">None</span></td>
+            <td class="px-5 py-3.5 bg-white"><span class="comp-partial">~</span> <span class="text-muted">Minimal</span></td>
+            <td class="px-5 py-3.5 bg-white"><span class="comp-x">✗</span> <span class="text-muted">Significant — widely reported</span></td>
+            <td class="px-5 py-3.5 bg-white"><span class="comp-partial">~</span> <span class="text-muted">Fragrance residue</span></td>
+            <td class="px-5 py-3.5 bg-white"><span class="comp-x">✗</span> <span class="text-muted">Chalky lines under HD cameras</span></td>
+          </tr>
+          <tr>
+            <td class="px-5 py-3.5 font-600 text-ink bg-bone/40">Jar sealing</td>
+            <td class="px-5 py-3.5 comp-col-ours"><span class="comp-check">✓</span> <span class="text-ink">Clinical airtight seal</span></td>
+            <td class="px-5 py-3.5 bg-white"><span class="comp-partial">~</span> <span class="text-muted">Standard</span></td>
+            <td class="px-5 py-3.5 bg-white"><span class="comp-x">✗</span> <span class="text-muted">Drying reported at Costco</span></td>
+            <td class="px-5 py-3.5 bg-white"><span class="comp-partial">~</span> <span class="text-muted">Spoilage reported</span></td>
+            <td class="px-5 py-3.5 bg-white"><span class="comp-x">✗</span> <span class="text-muted">Dried-out patches widely reported</span></td>
+          </tr>
+          <tr class="border-t-2" style="border-color:rgba(33,26,36,.15)">
+            <td class="px-5 py-3.5 font-600 text-ink bg-bone/40">30-day guarantee</td>
+            <td class="px-5 py-3.5 comp-col-ours"><span class="comp-check font-700">✓ Full refund</span></td>
+            <td class="px-5 py-3.5 bg-white"><span class="comp-x">✗</span></td>
+            <td class="px-5 py-3.5 bg-white"><span class="comp-x">✗</span></td>
+            <td class="px-5 py-3.5 bg-white"><span class="comp-x">✗</span></td>
+            <td class="px-5 py-3.5 bg-white"><span class="comp-x">✗</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="text-[12px] text-muted text-center mt-4">Competitor data from 1-star review mining across Sephora, Ulta, Amazon, and Costco. ✓ = meets standard · ~ = partial · ✗ = fails or absent.</p>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     SUMMER SALE FINAL CTA
+═══════════════════════════════════════════ -->
+<section class="py-16 sm:py-20 bg-ink grain relative overflow-hidden">
+  <div class="max-w-[700px] mx-auto px-5 sm:px-8 text-center reveal">
+    <div class="flex items-center justify-center gap-2 mb-6">
+      <span class="sale-dot w-2 h-2 rounded-full bg-rose inline-block"></span>
+      <span class="eyebrow text-rose">Summer Sale — 50% Off · Today Only</span>
+    </div>
+    <h2 class="font-display display-tight text-[32px] sm:text-[46px] text-porcelain mb-4">
+      Stop tilting your laptop screen. Start your 15-minute protocol.
+    </h2>
+    <p class="text-[15.5px] text-porcelain/65 max-w-md mx-auto mb-8 leading-relaxed">
+      You've read the mechanism. You understand why the creams failed. The 30-day guarantee means the only risk is doing nothing.
+    </p>
+
+    <!-- Price options -->
+    <div class="flex flex-wrap justify-center gap-6 mb-8">
+      <div class="text-center">
+        <p class="text-[11.5px] text-porcelain/50 uppercase tracking-wide mb-1">Trial · 1 jar</p>
+        <p class="text-[13px] text-porcelain/35 line-through">$158</p>
+        <p class="font-display text-[32px] leading-none text-porcelain font-600">$79</p>
+      </div>
+      <div class="text-center relative">
+        <span class="absolute -top-3 left-1/2 -translate-x-1/2 text-[10px] font-700 uppercase tracking-wide bg-rose text-ink px-2.5 py-1 rounded-full whitespace-nowrap">Most popular</span>
+        <p class="text-[11.5px] text-porcelain/50 uppercase tracking-wide mb-1 mt-3">Restore · 3 jars</p>
+        <p class="text-[13px] text-porcelain/35 line-through">$354</p>
+        <p class="font-display text-[32px] leading-none text-porcelain font-600">$177</p>
+      </div>
+      <div class="text-center">
+        <p class="text-[11.5px] text-porcelain/50 uppercase tracking-wide mb-1">Renew · 6 jars</p>
+        <p class="text-[13px] text-porcelain/35 line-through">$588</p>
+        <p class="font-display text-[32px] leading-none text-porcelain font-600">$294</p>
+      </div>
+    </div>
+
+    <!-- Countdown -->
+    <div class="flex items-center justify-center gap-3 mb-8">
+      <span class="text-[14px] text-porcelain/60">Sale ends in:</span>
+      <span class="bg-white/10 border border-white/15 rounded-lg px-4 py-2 font-display text-[24px] leading-none font-600 text-porcelain tabular-nums" id="finalCountdown">15:00</span>
+    </div>
+
+    <a href="#bundles" class="btn btn-primary px-8 py-4 text-[16.5px] inline-flex mb-4" style="background:#C17C84;color:#211A24;">
+      Claim 50% Off — Shop Rejouva →
+    </a>
+    <p class="text-[12px] text-porcelain/40">30-day money-back guarantee · Free shipping on 3+ jars · Secure checkout</p>
+  </div>
+</section>
+
+</main>
+
+<!-- Sticky Mobile CTA -->
+<div id="mobileCta"
+  class="mobile-cta md:hidden fixed bottom-0 left-0 right-0 z-50 bg-porcelain/95 backdrop-blur border-t hairline px-4 py-2.5 flex items-center justify-between gap-3 translate-y-full"
+  style="transition:transform .5s cubic-bezier(.16,1,.3,1)">
+  <div class="leading-tight shrink-0">
+    <p class="text-[10.5px] text-rose-deep font-600 uppercase tracking-wide">50% Off Today</p>
+    <p class="text-[12.5px] text-ink">From <span class="font-700">$79</span> <span class="line-through text-muted text-[11px]">$158</span></p>
+  </div>
+  <a href="#bundles" class="btn btn-primary px-5 py-3 text-[14.5px] flex-1 text-center">Claim Sale →</a>
+</div>
+
+<!-- Footer -->
+<footer class="border-t hairline bg-bone">
+  <div class="max-w-content mx-auto px-5 sm:px-8 py-10">
+    <div class="flex flex-wrap items-start justify-between gap-8 mb-8">
+      <div>
+        <a href="#" class="font-display text-[22px] font-600 text-ink">Rejouva<span class="text-rose">.</span></a>
+        <p class="text-[13px] text-muted mt-1 max-w-xs leading-relaxed">Clinical-grade periorbital restoration. Built for the boardroom, not the beauty aisle.</p>
+      </div>
+      <div class="flex flex-wrap gap-x-8 gap-y-4 text-[13.5px] text-muted">
+        <a href="#" class="hover:text-rose-deep transition-colors">Privacy Policy</a>
+        <a href="#" class="hover:text-rose-deep transition-colors">Terms of Service</a>
+        <a href="#" class="hover:text-rose-deep transition-colors">Contact</a>
+        <a href="#" class="hover:text-rose-deep transition-colors">Refund Policy</a>
+      </div>
+    </div>
+    <div class="border-t hairline pt-6 text-[12px] text-muted leading-relaxed space-y-2">
+      <p>These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease. Individual results vary. Clinical data references reflect peer-reviewed studies on PDRN and sub-500-Da collagen peptides.</p>
+      <p>© 2026 Rejouva France. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // ── Scroll reveal ──────────────────────────────
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, { threshold: .1, rootMargin: '0px 0px -5% 0px' });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // ── Sticky mobile CTA ─────────────────────────
+  const cta = document.getElementById('mobileCta');
+  function syncCta() {
+    cta.classList.toggle('translate-y-full', window.scrollY < window.innerHeight * 0.5);
+  }
+  window.addEventListener('scroll', syncCta, { passive: true }); syncCta();
+
+  // ── Shared countdown (15 min) ─────────────────
+  const END = Date.now() + 15 * 60 * 1000;
+  const countdownEls = [
+    document.getElementById('saleCountdown'),
+    document.getElementById('cartCountdown'),
+    document.getElementById('finalCountdown'),
+  ];
+  function tick() {
+    const diff = Math.max(0, END - Date.now());
+    const m = Math.floor(diff / 60000);
+    const s = Math.floor((diff % 60000) / 1000);
+    const str = m + ':' + String(s).padStart(2, '0');
+    countdownEls.forEach(el => { if (el) el.textContent = str; });
+    if (diff > 0) requestAnimationFrame(tick);
+    else countdownEls.forEach(el => { if (el) el.textContent = 'Expired'; });
+  }
+  tick();
+
+  // ── Gallery image swap ────────────────────────
+  function setImage(btn, src, alt) {
+    document.getElementById('mainImage').src = src;
+    document.getElementById('mainImage').alt = alt;
+    document.querySelectorAll('.thumb-active').forEach(t => t.classList.remove('thumb-active'));
+    btn.classList.add('thumb-active');
+  }
+
+  // ── Bundle selector ───────────────────────────
+  function selectBundle(el) {
+    document.querySelectorAll('.bundle-option').forEach(b => {
+      b.classList.remove('selected');
+      b.querySelector('.bundle-radio').style.borderColor = 'rgba(33,26,36,.25)';
+      b.querySelector('.bundle-radio-dot').style.opacity = '0';
+    });
+    el.classList.add('selected');
+    el.querySelector('.bundle-radio').style.borderColor = '#C17C84';
+    el.querySelector('.bundle-radio-dot').style.opacity = '1';
+    document.getElementById('displayPrice').textContent = el.dataset.price;
+    document.getElementById('displayWas').textContent = el.dataset.was;
+    document.getElementById('ctaPrice').textContent = el.dataset.price;
+  }
+
+  // Init radio state for default selected
+  (function () {
+    const sel = document.querySelector('.bundle-option.selected');
+    if (sel) {
+      sel.querySelector('.bundle-radio').style.borderColor = '#C17C84';
+      sel.querySelector('.bundle-radio-dot').style.opacity = '1';
+    }
+  })();
+
+  // ── Add to cart placeholder ───────────────────
+  function handleAddToCart() {
+    const sel = document.querySelector('.bundle-option.selected');
+    const label = sel ? sel.dataset.label : 'Restore · 3 Jars';
+    const price = sel ? sel.dataset.price : '$177';
+    alert('Cart: ' + label + ' — ' + price + '\n\n(Connect your checkout/Shopify here)');
+  }
+</script>
+
+</body>
+</html>
