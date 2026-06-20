@@ -128,14 +128,20 @@
   @keyframes slide{ from{ transform:translateX(0) } to{ transform:translateX(-50%) } }
 
   .underline-rose{ background-image:linear-gradient(transparent 62%, rgba(193,124,132,.35) 0); }
+
+  /* Mobile: offset anchored sections under sticky header + room for sticky CTA bar */
+  section[id]{ scroll-margin-top:80px; }
+  @media (max-width:767px){ body{ padding-bottom:76px; } }
+  .mobile-cta{ box-shadow:0 -8px 24px -12px rgba(33,26,36,.28); }
 </style>
 </head>
 
-<body class="font-sans antialiased">
+<body class="font-sans antialiased overflow-x-hidden">
 
 <!-- Announcement bar -->
-<div class="bg-ink text-porcelain text-center text-[12.5px] tracking-wide py-2.5 px-4">
-  <span class="opacity-90">Clinical-grade PDRN · &gt;95% purified salmon polynucleotide · Formulated &amp; sealed in France</span>
+<div class="bg-ink text-porcelain text-center text-[12px] sm:text-[12.5px] tracking-wide py-2.5 px-4">
+  <span class="opacity-90 sm:hidden">Clinical-grade PDRN · Sealed in France</span>
+  <span class="opacity-90 hidden sm:inline">Clinical-grade PDRN · &gt;95% purified salmon polynucleotide · Formulated &amp; sealed in France</span>
 </div>
 
 <!-- Nav -->
@@ -167,9 +173,9 @@
         <span class="underline-rose">beneath the 500-Dalton barrier</span> your $150 cream can't cross.
         Drains pooled morning fluid and rebuilds structural hollowing, hands-free, in 15 minutes.
       </p>
-      <div class="flex flex-wrap items-center gap-4 mb-9">
-        <a href="#order" class="btn btn-primary text-[15.5px] px-7 py-3.5">Restore my under-eyes →</a>
-        <a href="#barrier" class="btn btn-ghost text-[15px] px-6 py-3.5">Why creams fail</a>
+      <div class="flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center gap-3 sm:gap-4 mb-9">
+        <a href="#order" class="btn btn-primary text-[15.5px] px-7 py-4 sm:py-3.5 w-full sm:w-auto">Restore my under-eyes →</a>
+        <a href="#barrier" class="btn btn-ghost text-[15px] px-6 py-4 sm:py-3.5 w-full sm:w-auto">Why creams fail</a>
       </div>
       <div class="flex flex-wrap gap-x-7 gap-y-3 text-[13px] text-muted">
         <span class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-rose"></span>&gt;95% pure PDRN</span>
@@ -574,7 +580,7 @@
       </div>
 
       <!-- 3 jar (featured) -->
-      <div class="reveal bg-ink text-porcelain rounded-3xl shadow-lift p-8 flex flex-col relative scale-[1.03] z-10">
+      <div class="reveal bg-ink text-porcelain rounded-3xl shadow-lift p-8 flex flex-col relative md:scale-[1.03] z-10">
         <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-rose text-ink text-[11.5px] font-700 tracking-wide uppercase px-4 py-1.5 rounded-full">Most popular</span>
         <p class="font-display text-[22px]">Restore</p>
         <p class="text-[13.5px] text-porcelain/60 mt-1 mb-6">3 jars · 90 pairs</p>
@@ -688,6 +694,15 @@
 
 </main>
 
+<!-- Sticky mobile CTA (Meta ad traffic) -->
+<div id="mobileCta" class="mobile-cta md:hidden fixed bottom-0 left-0 right-0 z-50 bg-porcelain/95 backdrop-blur border-t hairline px-4 py-2.5 flex items-center justify-between gap-3 translate-y-full transition-transform duration-500" style="transition-timing-function:cubic-bezier(.16,1,.3,1)">
+  <div class="leading-tight shrink-0">
+    <p class="text-[12.5px] text-ink">From <span class="font-700 text-rose-deep">$49</span><span class="text-muted">/jar</span></p>
+    <p class="text-[10.5px] text-muted">30-day guarantee</p>
+  </div>
+  <a href="#order" class="btn btn-primary px-6 py-3 text-[15px] flex-1 text-center">Shop Patches →</a>
+</div>
+
 <!-- FOOTER -->
 <footer class="bg-porcelain border-t hairline">
   <div class="max-w-content mx-auto px-5 sm:px-8 py-14">
@@ -749,6 +764,21 @@
       });
     });
   });
+
+  // Sticky mobile CTA: show after hero, hide while the order section is on screen
+  const mobileCta = document.getElementById('mobileCta');
+  const orderEl = document.getElementById('order');
+  let orderVisible = false;
+  if (orderEl){
+    new IntersectionObserver(([e]) => { orderVisible = e.isIntersecting; sync(); }, { threshold:.15 }).observe(orderEl);
+  }
+  function sync(){
+    const pastHero = window.scrollY > window.innerHeight * 0.7;
+    const show = pastHero && !orderVisible;
+    mobileCta.classList.toggle('translate-y-full', !show);
+  }
+  window.addEventListener('scroll', sync, { passive:true });
+  sync();
 </script>
 
 </body>
