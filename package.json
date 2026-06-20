@@ -5,5 +5,8 @@
   "scripts": {
     "serve": "node serve.mjs",
     "shot": "node screenshot.mjs"
+  },
+  "dependencies": {
+    "puppeteer": "^25.1.0"
   }
 }
