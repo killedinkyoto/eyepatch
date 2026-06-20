@@ -1,11 +1,11 @@
-// Minimal static dev server — serves the project root at http://localhost:3000
+// Minimal static dev server — serves the project root at http://localhost:3004
 // Usage: node serve.mjs   (run in background before screenshotting)
 import { createServer } from 'node:http';
 import { readFile, stat } from 'node:fs/promises';
 import { join, extname, normalize } from 'node:path';
 
 const ROOT = process.cwd();
-const PORT = 3000;
+const PORT = process.env.PORT || 3004;
 
 const TYPES = {
   '.html': 'text/html; charset=utf-8',
