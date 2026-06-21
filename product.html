@@ -116,6 +116,19 @@
   /* Stars */
   .stars { color:#BFA06A; letter-spacing:.06em; }
 
+  /* Science tabs */
+  .sci-tab { border-radius:12px; cursor:pointer; }
+  .sci-tab.active { background:#fff; color:#211A24; box-shadow:0 1px 4px rgba(33,26,36,.12); }
+  .sci-panel { animation:fadePanel .3s cubic-bezier(.16,1,.3,1); }
+  .sci-panel.hidden { display:none; }
+  @keyframes fadePanel { from { opacity:0; transform:translateY(6px); } to { opacity:1; transform:none; } }
+
+  /* Trustpilot styling */
+  .tp-stars { color:#00B67A; letter-spacing:.04em; }
+  .tp-logo-mark { background:#00B67A; color:#fff; font-size:10.5px; font-weight:800; letter-spacing:.06em; line-height:1; border-radius:2px; }
+  .tp-avatar { width:32px; height:32px; border-radius:50%; display:flex; align-items:center; justify-content:center;
+    font-weight:700; font-size:13px; color:#fff; flex-shrink:0; }
+
   @media (max-width:767px) {
     body { padding-bottom:76px; }
   }
@@ -240,47 +253,44 @@
       </div>
 
       <!-- Benefits -->
-      <div class="space-y-3">
-        <p class="text-[13px] font-600 text-ink uppercase tracking-[.14em]">What it does</p>
-        <ul class="space-y-2.5">
-          <li class="flex items-start gap-3 text-[15px] text-ink/80">
-            <span class="mt-1 w-5 h-5 rounded-full bg-blush flex items-center justify-center flex-shrink-0">
-              <svg width="10" height="10" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#9E4F58" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </span>
-            <span>Drains pooled morning fluid via hydrostatic compression — reducing bags in 15 minutes</span>
-          </li>
-          <li class="flex items-start gap-3 text-[15px] text-ink/80">
-            <span class="mt-1 w-5 h-5 rounded-full bg-blush flex items-center justify-center flex-shrink-0">
-              <svg width="10" height="10" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#9E4F58" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </span>
-            <span>Clears dark vascular shadows via thermal vasoconstriction as the hydrogel cools</span>
-          </li>
-          <li class="flex items-start gap-3 text-[15px] text-ink/80">
-            <span class="mt-1 w-5 h-5 rounded-full bg-blush flex items-center justify-center flex-shrink-0">
-              <svg width="10" height="10" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#9E4F58" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </span>
-            <span>Delivers PDRN directly to your A2A receptors — triggering the Nucleotide Salvage Pathway for energy-efficient cellular repair</span>
-          </li>
-          <li class="flex items-start gap-3 text-[15px] text-ink/80">
-            <span class="mt-1 w-5 h-5 rounded-full bg-blush flex items-center justify-center flex-shrink-0">
-              <svg width="10" height="10" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#9E4F58" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </span>
-            <span>Pink Collagen at 100–243 Da — mathematically small enough to cross the 500-Da skin barrier and trigger a 184% increase in collagen synthesis</span>
-          </li>
-          <li class="flex items-start gap-3 text-[15px] text-ink/80">
-            <span class="mt-1 w-5 h-5 rounded-full bg-blush flex items-center justify-center flex-shrink-0">
-              <svg width="10" height="10" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#9E4F58" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </span>
-            <span>High-viscosity non-slip gel locks to the zygomatic arch — make coffee, pack lunches, answer emails. Completely hands-free.</span>
-          </li>
-        </ul>
+      <div class="space-y-2.5">
+        <li class="flex items-center gap-3.5 list-none">
+          <span class="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0" style="background:#F4E6E4">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#9E4F58" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C8 2 5 7 5 12a7 7 0 0 0 14 0c0-5-3-10-7-10z"/><path d="M12 22v-4"/></svg>
+          </span>
+          <span class="text-[15px] text-ink font-500">Reduces morning eye bags in <strong>15 minutes</strong></span>
+        </li>
+        <li class="flex items-center gap-3.5 list-none">
+          <span class="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0" style="background:#F3EBE4">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#BFA06A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          </span>
+          <span class="text-[15px] text-ink font-500">Visibly fades dark circles and discoloration</span>
+        </li>
+        <li class="flex items-center gap-3.5 list-none">
+          <span class="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0" style="background:#F4E6E4">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#9E4F58" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="4" rx="2"/><rect x="4" y="14" width="16" height="4" rx="2"/><path d="M6 4h12"/></svg>
+          </span>
+          <span class="text-[15px] text-ink font-500">Rebuilds collagen from inside the skin — <strong>+184%</strong> increase</span>
+        </li>
+        <li class="flex items-center gap-3.5 list-none">
+          <span class="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0" style="background:#211A24">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C17C84" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22V12"/><path d="M17 7H7a5 5 0 0 0 0 10h5"/><path d="M17 2a5 5 0 0 1 0 10h-5"/></svg>
+          </span>
+          <span class="text-[15px] text-ink font-500">Stays put <strong>completely hands-free</strong> — no lying still</span>
+        </li>
+        <li class="flex items-center gap-3.5 list-none">
+          <span class="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0" style="background:#F4E6E4">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#9E4F58" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.9 5.8H20l-4.9 3.6 1.9 5.8L12 14.6l-5 3.6 1.9-5.8L4 8.8h6.1z"/></svg>
+          </span>
+          <span class="text-[15px] text-ink font-500">Zero residue — concealer glides on perfectly after</span>
+        </li>
       </div>
 
       <!-- Mechanism blurb -->
       <div class="bg-ink text-porcelain rounded-2xl p-5 relative overflow-hidden grain">
         <p class="eyebrow text-rose mb-2">The short version</p>
-        <p class="text-[14.5px] text-porcelain/80 leading-relaxed">
-          The 500-Dalton Rule is why every cream you've tried failed. Your luxury eye cream's collagen weighs ~300,000 Da — it can't enter your skin, ever. Rejouva's active ingredients are engineered at 100–243 Da. They cross the barrier, reach your fibroblasts, and trigger repair the same way PDRN has been doing it in hospital burn units for decades. Mechanical drainage from above. Cellular rebuild from within.
+        <p class="text-[15px] text-porcelain/90 leading-relaxed">
+          Your skin has a size limit for what can get inside it. Every cream you've tried is too big to cross it. Rejouva isn't. It drains the fluid above and repairs the tissue below — in the same 15 minutes.
         </p>
       </div>
 
@@ -654,101 +664,147 @@
 
 
 <!-- ═══════════════════════════════════════════
-     MECHANISM DEEP-DIVE
+     MECHANISM — TABBED VISUAL
 ═══════════════════════════════════════════ -->
 <section class="py-16 sm:py-20">
   <div class="max-w-content mx-auto px-5 sm:px-8">
-    <div class="text-center mb-14 reveal">
+    <div class="text-center mb-10 reveal">
       <p class="eyebrow text-rose-deep mb-4">The science</p>
-      <h2 class="font-display display-tight text-[28px] sm:text-[40px] text-ink max-w-2xl mx-auto">
-        What's actually happening under your skin every morning.
+      <h2 class="font-display display-tight text-[28px] sm:text-[38px] text-ink">
+        Why nothing else worked. Why this does.
       </h2>
     </div>
 
-    <div class="grid lg:grid-cols-2 gap-8 items-start mb-10">
-      <!-- Problem mechanism -->
-      <div class="reveal">
-        <div class="relative rounded-2xl overflow-hidden shadow-lift mb-6">
-          <img src="https://placehold.co/640x360/211A24/C17C84?text=The+Evening+Cortisol+Trap" alt="The Evening Cortisol Trap — blue light, cortisol, fluid pooling" class="w-full object-cover" />
-          <div class="absolute inset-0" style="background:linear-gradient(to top,rgba(33,26,36,.6),transparent 55%)"></div>
-          <div class="absolute inset-0 mix-blend-multiply" style="background:linear-gradient(150deg,rgba(193,124,132,.2),transparent 55%)"></div>
-          <p class="absolute bottom-4 left-5 text-[13px] text-porcelain/70">The Modern Periorbital Fatigue Complex</p>
-        </div>
-        <h3 class="font-display text-[22px] text-ink mb-3">The Evening Cortisol Trap</h3>
-        <div class="space-y-3 text-[15px] text-ink/75 leading-relaxed">
-          <p>Your device screens emit HEV blue light that signals your brain's master clock it's still daytime. Melatonin — the skin's overnight antioxidant — is suppressed for up to 90 minutes. Cortisol that should drop to its lowest point at midnight stays elevated instead.</p>
-          <p>Elevated cortisol keeps your periorbital capillaries dilated and leaky. When you sleep flat, with no movement in the orbicularis oculi muscle, fluid escapes into the loose tissue beneath your eye and has nowhere to go. By morning: bags. Deoxygenated blood pools in those capillaries, showing through your 0.5mm-thin under-eye skin as dark blue-purple shadows.</p>
-          <p>This is not a sleep problem. This is a structural, microvascular problem — the biological toll of a modern professional schedule.</p>
-        </div>
-      </div>
-
-      <!-- Solution mechanism -->
-      <div class="reveal" style="transition-delay:.1s">
-        <div class="relative rounded-2xl overflow-hidden shadow-lift mb-6">
-          <img src="https://placehold.co/640x360/3A2F3E/BFA06A?text=From+Burn+Units+to+the+Boardroom" alt="PDRN Nucleotide Salvage Pathway" class="w-full object-cover" />
-          <div class="absolute inset-0" style="background:linear-gradient(to top,rgba(33,26,36,.55),transparent 55%)"></div>
-          <p class="absolute bottom-4 left-5 text-[13px] text-porcelain/70">PDRN: From burn units to boardrooms</p>
-        </div>
-        <h3 class="font-display text-[22px] text-ink mb-3">Two systems. Simultaneous.</h3>
-        <div class="space-y-3 text-[15px] text-ink/75 leading-relaxed">
-          <p><strong class="text-ink">Above the skin:</strong> The hydrogel's weight applies continuous hydrostatic pressure to the periorbital tissue — mechanically pushing accumulated fluid back into your lymphatic system. As the hydrogel's water evaporates, surface temperature drops, triggering thermal vasoconstriction. Dilated capillaries narrow. Dark shadows reduce.</p>
-          <p><strong class="text-ink">Inside the skin:</strong> PDRN binds to adenosine A2A receptors on your dermal fibroblasts. It stops the inflammatory collagen breakdown. It feeds pre-built nucleotide fragments directly to your damaged, cortisol-stressed cells via the Nucleotide Salvage Pathway — the same biological shortcut hospital burn units have used for decades. Energy-efficient repair without the ATP cost of building DNA from scratch.</p>
-          <p><strong class="text-ink">Structural rebuild:</strong> Pink Collagen at 100–243 Da crosses the 500-Dalton barrier and signals fibroblasts to increase their own collagen and elastin production by 184%.</p>
-        </div>
-      </div>
+    <!-- Tab nav -->
+    <div class="flex gap-1.5 mb-7 bg-bone p-1.5 rounded-2xl max-w-xl mx-auto reveal">
+      <button class="sci-tab active flex-1 py-2.5 px-3 text-[13px] font-600 transition-all" onclick="switchTab('problem',this)">Why it happens</button>
+      <button class="sci-tab flex-1 py-2.5 px-3 text-[13px] font-600 transition-all text-muted" onclick="switchTab('creams',this)">Why creams fail</button>
+      <button class="sci-tab flex-1 py-2.5 px-3 text-[13px] font-600 transition-all text-muted" onclick="switchTab('fix',this)">How Rejouva works</button>
     </div>
 
-    <!-- 500 Da Visual -->
-    <div class="rounded-2xl atmos-ink grain relative overflow-hidden text-porcelain p-7 sm:p-9 reveal">
-      <p class="eyebrow text-rose mb-6">Molecular weight vs. the 500 Da skin barrier</p>
-      <div class="space-y-5">
-        <div>
-          <div class="flex justify-between items-end mb-2">
-            <span class="text-[14px] text-porcelain/80">Native cream collagen (luxury eye creams)</span>
-            <span class="text-[13px] text-porcelain/50 font-600 tabular-nums">≈ 300,000 Da</span>
+    <div class="reveal">
+
+      <!-- Panel 1: Why it happens -->
+      <div id="tab-problem" class="sci-panel">
+        <div class="grid sm:grid-cols-3 gap-4">
+          <div class="bg-ink text-porcelain rounded-2xl p-6 grain relative overflow-hidden">
+            <div class="w-10 h-10 rounded-xl bg-rose/20 flex items-center justify-center mb-4">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C17C84" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+            </div>
+            <p class="eyebrow text-rose mb-2">Evening</p>
+            <p class="font-display text-[19px] text-porcelain mb-2 leading-snug">Screen light suppresses your skin's overnight repair</p>
+            <p class="text-[12.5px] text-porcelain/55 leading-relaxed">Melatonin — your skin's antioxidant — is blocked for up to 90 min. Cortisol stays high all night.</p>
           </div>
-          <div class="h-3 rounded-full bg-white/10">
-            <div class="h-full w-full rounded-full" style="background:linear-gradient(90deg,#3A2F3E,#6E626A)"></div>
+          <div class="bg-ink-soft text-porcelain rounded-2xl p-6">
+            <div class="w-10 h-10 rounded-xl bg-rose/20 flex items-center justify-center mb-4">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C17C84" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C6 2 4 8 4 12a8 8 0 0 0 16 0c0-4-2-10-8-10z"/><path d="M12 22v-3"/></svg>
+            </div>
+            <p class="eyebrow text-rose mb-2">While you sleep</p>
+            <p class="font-display text-[19px] text-porcelain mb-2 leading-snug">Fluid pools under your eyes with nowhere to drain</p>
+            <p class="text-[12.5px] text-porcelain/55 leading-relaxed">Cortisol keeps capillaries leaky. No muscle movement means no drainage. It accumulates all night.</p>
           </div>
-          <p class="text-[11.5px] text-porcelain/40 mt-1.5">Cannot enter skin — remains on surface. Can worsen morning puffiness by trapping fluid.</p>
+          <div class="bg-blush rounded-2xl p-6 border hairline">
+            <div class="w-10 h-10 rounded-xl bg-rose-deep/10 flex items-center justify-center mb-4">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#9E4F58" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+            </div>
+            <p class="eyebrow text-rose-deep mb-2">6:00 AM</p>
+            <p class="font-display text-[19px] text-ink mb-2 leading-snug">Bags. Dark shadows. Zoom call in 2 hours.</p>
+            <p class="text-[12.5px] text-ink/55 leading-relaxed">Deoxygenated blood shows through 0.5mm-thin under-eye skin as dark purple shadowing.</p>
+          </div>
         </div>
-        <div>
-          <div class="flex justify-between items-end mb-2">
-            <span class="text-[14px] text-porcelain/80">Hydrolyzed collagen (most "advanced" serums)</span>
-            <span class="text-[13px] text-porcelain/50 font-600 tabular-nums">~3,000 Da</span>
+        <p class="text-center text-[13px] text-muted mt-5 italic">Not a sleep problem. A structural, vascular problem — the toll of a modern professional schedule.</p>
+      </div>
+
+      <!-- Panel 2: Why creams fail -->
+      <div id="tab-creams" class="sci-panel hidden">
+        <div class="bg-ink grain relative overflow-hidden rounded-2xl p-7 sm:p-9 text-porcelain">
+          <p class="eyebrow text-rose mb-6">The 500-Dalton Rule — why nothing on your shelf can get inside your skin</p>
+          <div class="space-y-5">
+            <div class="flex items-center gap-4">
+              <div class="w-40 flex-shrink-0">
+                <p class="text-[11.5px] text-porcelain/50 mb-0.5">Luxury eye cream collagen</p>
+                <p class="font-display text-[22px] text-porcelain/40 font-600 leading-none">300,000 Da</p>
+              </div>
+              <div class="flex-1 h-3 bg-white/10 rounded-full overflow-hidden">
+                <div class="h-full w-full rounded-full" style="background:linear-gradient(90deg,#3A2F3E,#6E626A)"></div>
+              </div>
+              <span class="text-[12px] text-porcelain/35 w-20 text-right flex-shrink-0 leading-tight">Sits on surface</span>
+            </div>
+            <div class="flex items-center gap-4">
+              <div class="w-40 flex-shrink-0">
+                <p class="text-[11.5px] text-porcelain/50 mb-0.5">"Advanced" serum collagen</p>
+                <p class="font-display text-[22px] text-porcelain/40 font-600 leading-none">~3,000 Da</p>
+              </div>
+              <div class="flex-1 h-3 bg-white/10 rounded-full overflow-hidden">
+                <div class="h-full rounded-full" style="width:38%;background:linear-gradient(90deg,#3A2F3E,#6E626A)"></div>
+              </div>
+              <span class="text-[12px] text-porcelain/35 w-20 text-right flex-shrink-0 leading-tight">Still too big</span>
+            </div>
+            <div class="relative py-1.5">
+              <div class="border-t-2 border-dashed" style="border-color:rgba(193,124,132,.55)"></div>
+              <span class="absolute -top-3 right-0 text-[11px] font-700 text-rose bg-ink-soft px-2.5 py-0.5 rounded-full whitespace-nowrap">500 Da — the skin barrier limit</span>
+            </div>
+            <div class="flex items-center gap-4">
+              <div class="w-40 flex-shrink-0">
+                <p class="text-[11.5px] text-rose mb-0.5">Rejouva Pink Collagen</p>
+                <p class="font-display text-[22px] text-rose font-600 leading-none">100–243 Da</p>
+              </div>
+              <div class="flex-1 h-3 bg-white/10 rounded-full overflow-hidden">
+                <div class="h-full rounded-full" style="width:12%;background:linear-gradient(90deg,#C17C84,#9E4F58);box-shadow:0 0 8px rgba(193,124,132,.4)"></div>
+              </div>
+              <span class="text-[12px] text-rose font-600 w-20 text-right flex-shrink-0 leading-tight">Gets inside ✓</span>
+            </div>
           </div>
-          <div class="h-3 rounded-full bg-white/10">
-            <div class="h-full rounded-full" style="width:45%;background:linear-gradient(90deg,#3A2F3E,#6E626A)"></div>
+          <div class="mt-8 grid grid-cols-3 gap-3 text-center border-t border-white/10 pt-6">
+            <div><p class="font-display text-[30px] text-porcelain font-600 leading-none">$0</p><p class="text-[12px] text-porcelain/45 mt-1">of your cream's collagen reaches the dermis</p></div>
+            <div><p class="font-display text-[30px] text-rose font-600 leading-none">184%</p><p class="text-[12px] text-porcelain/45 mt-1">collagen boost from sub-500 Da peptides</p></div>
+            <div><p class="font-display text-[30px] text-gold font-600 leading-none">&gt;95%</p><p class="text-[12px] text-porcelain/45 mt-1">PDRN purity — clinical burn-unit grade</p></div>
           </div>
-          <p class="text-[11.5px] text-porcelain/40 mt-1.5">Still 6× too large. Partial penetration at best. Surface hydration only.</p>
-        </div>
-        <div class="relative py-2">
-          <div class="border-t-2 border-dashed" style="border-color:rgba(193,124,132,.6)"></div>
-          <span class="absolute -top-3 right-0 text-[11.5px] font-700 text-rose bg-ink-soft px-3 py-1 rounded-full">500 Da skin barrier · the limit</span>
-        </div>
-        <div>
-          <div class="flex justify-between items-end mb-2">
-            <span class="text-[14px] text-porcelain font-600">Rejouva Pink Collagen</span>
-            <span class="text-[13px] text-rose font-700 tabular-nums">100–243 Da ✓</span>
-          </div>
-          <div class="h-3 rounded-full bg-white/10 shadow-glow">
-            <div class="h-full rounded-full" style="width:14%;background:linear-gradient(90deg,#C17C84,#9E4F58);box-shadow:0 0 12px rgba(158,79,88,.5)"></div>
-          </div>
-          <p class="text-[11.5px] text-rose/70 mt-1.5">Crosses the barrier · reaches fibroblasts · triggers 184% increase in collagen synthesis</p>
-        </div>
-        <div>
-          <div class="flex justify-between items-end mb-2">
-            <span class="text-[14px] text-porcelain font-600">Rejouva PDRN (&gt;95% pure)</span>
-            <span class="text-[13px] text-gold font-700 tabular-nums">50–1,500 kDa fragments ✓</span>
-          </div>
-          <div class="h-3 rounded-full bg-white/10">
-            <div class="h-full rounded-full" style="width:22%;background:linear-gradient(90deg,#BFA06A,#9E4F58)"></div>
-          </div>
-          <p class="text-[11.5px] text-gold/60 mt-1.5">Binds adenosine A2A receptors · activates Nucleotide Salvage Pathway · stops collagen breakdown</p>
         </div>
       </div>
-    </div>
 
+      <!-- Panel 3: How Rejouva works -->
+      <div id="tab-fix" class="sci-panel hidden">
+        <div class="grid sm:grid-cols-2 gap-4 mb-4">
+          <div class="bg-bone rounded-2xl p-6 border hairline">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-9 h-9 rounded-xl bg-rose/15 flex items-center justify-center flex-shrink-0">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#9E4F58" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              </div>
+              <div>
+                <p class="font-600 text-[14px] text-ink">In 15 minutes — above the skin</p>
+                <p class="text-[12px] text-muted">Immediate, visible</p>
+              </div>
+            </div>
+            <ul class="space-y-2.5 text-[14px] text-ink/75">
+              <li class="flex gap-2.5"><span class="text-rose-deep font-600 flex-shrink-0">→</span>Gel weight physically drains fluid into your lymph system</li>
+              <li class="flex gap-2.5"><span class="text-rose-deep font-600 flex-shrink-0">→</span>Cooling effect shrinks dilated capillaries</li>
+              <li class="flex gap-2.5"><span class="text-rose-deep font-600 flex-shrink-0">→</span>Dark shadows fade as blood flow normalises</li>
+            </ul>
+          </div>
+          <div class="bg-ink text-porcelain rounded-2xl p-6 grain relative overflow-hidden">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-9 h-9 rounded-xl bg-rose/20 flex items-center justify-center flex-shrink-0">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C17C84" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+              </div>
+              <div>
+                <p class="font-600 text-[14px] text-porcelain">Over 4–8 weeks — inside the skin</p>
+                <p class="text-[12px] text-porcelain/50">Cumulative rebuild</p>
+              </div>
+            </div>
+            <ul class="space-y-2.5 text-[14px] text-porcelain/75">
+              <li class="flex gap-2.5"><span class="text-rose font-600 flex-shrink-0">→</span>PDRN binds cell receptors — stops collagen breakdown</li>
+              <li class="flex gap-2.5"><span class="text-rose font-600 flex-shrink-0">→</span>Feeds damaged cells pre-built repair fragments</li>
+              <li class="flex gap-2.5"><span class="text-rose font-600 flex-shrink-0">→</span>Pink Collagen signals +184% new collagen production</li>
+            </ul>
+          </div>
+        </div>
+        <div class="bg-blush/60 rounded-2xl p-4 border hairline text-center">
+          <p class="text-[15px] text-ink font-600">The only patch engineered to work <em>above and below</em> the skin barrier. At the same time.</p>
+        </div>
+      </div>
+
+    </div>
   </div>
 </section>
 
@@ -759,18 +815,15 @@
 <section id="testimonials" class="py-16 sm:py-20 bg-bone">
   <div class="max-w-content mx-auto px-5 sm:px-8">
     <div class="text-center mb-12 reveal">
-      <p class="eyebrow text-rose-deep mb-3">Verified reviews</p>
-      <div class="flex items-center justify-center gap-3 mb-4">
-        <!-- Trustpilot-style badge -->
-        <div class="flex items-center gap-2 bg-white rounded-xl px-4 py-2.5 shadow-soft border hairline">
-          <div class="flex flex-col items-start">
-            <span class="text-[10px] font-700 text-ink uppercase tracking-wide">Trustpilot</span>
-            <span class="stars text-[15px]">★★★★★</span>
-          </div>
-          <div class="w-px h-8 bg-ink/10"></div>
-          <div>
-            <p class="font-display text-[22px] font-600 text-ink leading-none">4.9</p>
-            <p class="text-[11px] text-muted">347 reviews</p>
+      <!-- Trustpilot header badge -->
+      <div class="flex items-center justify-center gap-3 mb-7">
+        <div class="flex items-center gap-3 bg-white rounded-2xl px-5 py-3.5 shadow-soft border hairline">
+          <span class="tp-logo-mark px-2 py-1 rounded">Trustpilot</span>
+          <div class="flex gap-0.5 text-[18px] leading-none" style="color:#00B67A">★★★★★</div>
+          <div class="w-px h-6 bg-ink/10"></div>
+          <div class="text-left">
+            <p class="font-display text-[20px] font-600 text-ink leading-none">4.9</p>
+            <p class="text-[11px] text-muted leading-none mt-0.5">347 reviews</p>
           </div>
         </div>
       </div>
@@ -779,77 +832,137 @@
       </h2>
     </div>
 
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
 
-      <!-- Testimonial 1: "will it slide" objection -->
-      <div class="reveal bg-white rounded-2xl p-6 border hairline shadow-soft flex flex-col gap-4">
-        <div class="flex items-center gap-1 stars text-[15px]">★★★★★</div>
-        <p class="text-[15px] text-ink/80 leading-relaxed flex-1">
-          "I was absolutely certain this would slide off the moment I moved. I put them on and made breakfast, packed two lunches, fed the dog, signed three permission slips. <strong class="text-ink">Still on.</strong> I've tested six or seven brands. This is the only one that actually locks onto my face."
-        </p>
-        <div>
-          <p class="font-600 text-[13.5px] text-ink">Catherine R.</p>
-          <p class="text-[12px] text-muted">Management Consultant, New York · Verified Purchase</p>
+      <!-- TP Card 1: "will it slide" -->
+      <div class="reveal bg-white rounded-xl p-5 border hairline shadow-soft flex flex-col gap-3.5">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-2">
+            <div class="tp-avatar" style="background:#5B5EA6">CR</div>
+            <div>
+              <p class="font-600 text-[13.5px] text-ink leading-none">Catherine R.</p>
+              <p class="text-[11px] text-muted mt-0.5">New York · 14 May 2025</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-1.5">
+            <span class="tp-logo-mark px-1.5 py-0.5 rounded text-[9px]">Trustpilot</span>
+            <span class="text-[10px] text-[#00B67A] font-700">Verified</span>
+          </div>
+        </div>
+        <div class="flex gap-0.5 text-[15px]" style="color:#00B67A">★★★★★</div>
+        <div class="flex-1">
+          <p class="font-700 text-[13.5px] text-ink mb-1.5">Still on after breakfast, lunches, dog, three permission slips</p>
+          <p class="text-[13.5px] text-ink/70 leading-relaxed">"I put them on and made breakfast, packed two lunches, fed the dog, signed three permission slips. Still on. I've tested six or seven brands. This is the only one that actually locks onto my face."</p>
         </div>
       </div>
 
-      <!-- Testimonial 2: "reaction / rosacea" objection -->
-      <div class="reveal bg-ink text-porcelain rounded-2xl p-6 shadow-lift flex flex-col gap-4" style="transition-delay:.05s">
-        <div class="flex items-center gap-1 stars text-[15px]">★★★★★</div>
-        <p class="text-[15px] text-porcelain/80 leading-relaxed flex-1">
-          "I have rosacea and have reacted to nearly everything near my eyes. I was terrified. But the PDRN is purified free of proteins — nothing to react to. <strong class="text-porcelain">Three months daily. Not a single flare.</strong> My dermatologist actually asked me what I was using."
-        </p>
-        <div>
-          <p class="font-600 text-[13.5px] text-porcelain">Dr. Priya S.</p>
-          <p class="text-[12px] text-porcelain/50">Medical Director, London · Verified Purchase</p>
+      <!-- TP Card 2: "rosacea / reaction" -->
+      <div class="reveal bg-white rounded-xl p-5 border hairline shadow-soft flex flex-col gap-3.5" style="transition-delay:.05s">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-2">
+            <div class="tp-avatar" style="background:#C17C84">PS</div>
+            <div>
+              <p class="font-600 text-[13.5px] text-ink leading-none">Dr. Priya S.</p>
+              <p class="text-[11px] text-muted mt-0.5">London · 2 Apr 2025</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-1.5">
+            <span class="tp-logo-mark px-1.5 py-0.5 rounded text-[9px]">Trustpilot</span>
+            <span class="text-[10px] text-[#00B67A] font-700">Verified</span>
+          </div>
+        </div>
+        <div class="flex gap-0.5 text-[15px]" style="color:#00B67A">★★★★★</div>
+        <div class="flex-1">
+          <p class="font-700 text-[13.5px] text-ink mb-1.5">Three months daily. Not a single flare.</p>
+          <p class="text-[13.5px] text-ink/70 leading-relaxed">"I have rosacea and have reacted to nearly everything near my eyes. The PDRN is purified free of proteins — nothing to react to. My dermatologist actually asked me what I was using."</p>
         </div>
       </div>
 
-      <!-- Testimonial 3: "genetic / nothing works" objection -->
-      <div class="reveal bg-white rounded-2xl p-6 border hairline shadow-soft flex flex-col gap-4" style="transition-delay:.1s">
-        <div class="flex items-center gap-1 stars text-[15px]">★★★★★</div>
-        <p class="text-[15px] text-ink/80 leading-relaxed flex-1">
-          "My mother has them. I was told surgery was the only real option. Two weeks of Rejouva and my colleague asked if I'd had a good weekend — <strong class="text-ink">not 'are you okay?' for the first time in years.</strong> That shift in how people read my face told me everything."
-        </p>
-        <div>
-          <p class="font-600 text-[13.5px] text-ink">Sarah K.</p>
-          <p class="text-[12px] text-muted">Senior Partner, Boston · Verified Purchase</p>
+      <!-- TP Card 3: "genetic / nothing works" -->
+      <div class="reveal bg-white rounded-xl p-5 border hairline shadow-soft flex flex-col gap-3.5" style="transition-delay:.1s">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-2">
+            <div class="tp-avatar" style="background:#9E4F58">SK</div>
+            <div>
+              <p class="font-600 text-[13.5px] text-ink leading-none">Sarah K.</p>
+              <p class="text-[11px] text-muted mt-0.5">Boston · 19 Mar 2025</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-1.5">
+            <span class="tp-logo-mark px-1.5 py-0.5 rounded text-[9px]">Trustpilot</span>
+            <span class="text-[10px] text-[#00B67A] font-700">Verified</span>
+          </div>
+        </div>
+        <div class="flex gap-0.5 text-[15px]" style="color:#00B67A">★★★★★</div>
+        <div class="flex-1">
+          <p class="font-700 text-[13.5px] text-ink mb-1.5">"Are you okay?" became "You look great this week"</p>
+          <p class="text-[13.5px] text-ink/70 leading-relaxed">"My mother has them. I was told surgery was my only real option. Two weeks of Rejouva and my colleague asked if I'd had a good weekend — not 'are you okay?' for the first time in years."</p>
         </div>
       </div>
 
-      <!-- Testimonial 4: "makeup pilling" objection -->
-      <div class="reveal bg-blush/50 rounded-2xl p-6 border hairline flex flex-col gap-4" style="transition-delay:.05s">
-        <div class="flex items-center gap-1 stars text-[15px]">★★★★★</div>
-        <p class="text-[15px] text-ink/80 leading-relaxed flex-1">
-          "I destroyed an expensive concealer application with a Korean patch that left a film. I used Rejouva expecting the same thing. <strong class="text-ink">There was nothing — completely absorbed.</strong> My concealer sat better than it does without any patches at all. This is non-negotiable in my morning now."
-        </p>
-        <div>
-          <p class="font-600 text-[13.5px] text-ink">Alexandra M.</p>
-          <p class="text-[12px] text-muted">SVP Marketing, Deutsche Bank, Frankfurt · Verified Purchase</p>
+      <!-- TP Card 4: "makeup pilling" -->
+      <div class="reveal bg-white rounded-xl p-5 border hairline shadow-soft flex flex-col gap-3.5" style="transition-delay:.05s">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-2">
+            <div class="tp-avatar" style="background:#BFA06A">AM</div>
+            <div>
+              <p class="font-600 text-[13.5px] text-ink leading-none">Alexandra M.</p>
+              <p class="text-[11px] text-muted mt-0.5">Frankfurt · 8 Jun 2025</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-1.5">
+            <span class="tp-logo-mark px-1.5 py-0.5 rounded text-[9px]">Trustpilot</span>
+            <span class="text-[10px] text-[#00B67A] font-700">Verified</span>
+          </div>
+        </div>
+        <div class="flex gap-0.5 text-[15px]" style="color:#00B67A">★★★★★</div>
+        <div class="flex-1">
+          <p class="font-700 text-[13.5px] text-ink mb-1.5">Concealer sat better than without any patch at all</p>
+          <p class="text-[13.5px] text-ink/70 leading-relaxed">"A Korean patch destroyed a $60 application with residue film. I used Rejouva expecting the same. Completely absorbed. My concealer glides on and stays on. Non-negotiable in my morning now."</p>
         </div>
       </div>
 
-      <!-- Testimonial 5: "dries out / price" objection -->
-      <div class="reveal bg-white rounded-2xl p-6 border hairline shadow-soft flex flex-col gap-4" style="transition-delay:.1s">
-        <div class="flex items-center gap-1 stars text-[15px]">★★★★★</div>
-        <p class="text-[15px] text-ink/80 leading-relaxed flex-1">
-          "I've thrown away $75 jars of patches that dried out after the first dozen pairs. The Rejouva seal is different — clinical, airtight. I'm almost through my first jar using them daily and <strong class="text-ink">the patches are as saturated as day one.</strong> For what I've wasted on competitors, this is a bargain."
-        </p>
-        <div>
-          <p class="font-600 text-[13.5px] text-ink">Margot D.</p>
-          <p class="text-[12px] text-muted">Chief Operating Officer, Chicago · Verified Purchase</p>
+      <!-- TP Card 5: "dries out" -->
+      <div class="reveal bg-white rounded-xl p-5 border hairline shadow-soft flex flex-col gap-3.5" style="transition-delay:.1s">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-2">
+            <div class="tp-avatar" style="background:#6E626A">MD</div>
+            <div>
+              <p class="font-600 text-[13.5px] text-ink leading-none">Margot D.</p>
+              <p class="text-[11px] text-muted mt-0.5">Chicago · 27 May 2025</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-1.5">
+            <span class="tp-logo-mark px-1.5 py-0.5 rounded text-[9px]">Trustpilot</span>
+            <span class="text-[10px] text-[#00B67A] font-700">Verified</span>
+          </div>
+        </div>
+        <div class="flex gap-0.5 text-[15px]" style="color:#00B67A">★★★★★</div>
+        <div class="flex-1">
+          <p class="font-700 text-[13.5px] text-ink mb-1.5">As saturated as day one — and I'm almost through the jar</p>
+          <p class="text-[13.5px] text-ink/70 leading-relaxed">"I've thrown away $75 jars that dried out after the first dozen pairs. The Rejouva seal is clinical, airtight. For what I've wasted on competitors, this is a bargain."</p>
         </div>
       </div>
 
-      <!-- Testimonial 6: "tried everything / creams don't work" objection -->
-      <div class="reveal bg-ink text-porcelain rounded-2xl p-6 shadow-lift flex flex-col gap-4" style="transition-delay:.15s">
-        <div class="flex items-center gap-1 stars text-[15px]">★★★★★</div>
-        <p class="text-[15px] text-porcelain/80 leading-relaxed flex-1">
-          "Three years of eye creams. $2,000+ easily. After one week of Rejouva I understood why they failed — they were always sitting on top of my skin. <strong class="text-porcelain">They literally couldn't get in.</strong> Once I understood the 500-Dalton rule, I stopped being angry at myself for the failures. And Rejouva is just the first thing that actually gets in."
-        </p>
-        <div>
-          <p class="font-600 text-[13.5px] text-porcelain">Jennifer L.</p>
-          <p class="text-[12px] text-porcelain/50">General Counsel, Fortune 500, San Francisco · Verified Purchase</p>
+      <!-- TP Card 6: "tried everything" -->
+      <div class="reveal bg-white rounded-xl p-5 border hairline shadow-soft flex flex-col gap-3.5" style="transition-delay:.15s">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-2">
+            <div class="tp-avatar" style="background:#3A2F3E">JL</div>
+            <div>
+              <p class="font-600 text-[13.5px] text-ink leading-none">Jennifer L.</p>
+              <p class="text-[11px] text-muted mt-0.5">San Francisco · 11 Apr 2025</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-1.5">
+            <span class="tp-logo-mark px-1.5 py-0.5 rounded text-[9px]">Trustpilot</span>
+            <span class="text-[10px] text-[#00B67A] font-700">Verified</span>
+          </div>
+        </div>
+        <div class="flex gap-0.5 text-[15px]" style="color:#00B67A">★★★★★</div>
+        <div class="flex-1">
+          <p class="font-700 text-[13.5px] text-ink mb-1.5">Three years. $2,000+. Now I know why they all failed.</p>
+          <p class="text-[13.5px] text-ink/70 leading-relaxed">"After one week of Rejouva I understood — every cream I'd tried was always sitting on top of my skin. They literally couldn't get in. Rejouva is the first thing that actually does."</p>
         </div>
       </div>
 
@@ -957,6 +1070,36 @@
 
 
 <!-- ═══════════════════════════════════════════
+     LOSS AVERSION
+═══════════════════════════════════════════ -->
+<section class="py-14 sm:py-18 border-y hairline" style="background:#FBF8F5">
+  <div class="max-w-[640px] mx-auto px-5 sm:px-8 text-center reveal">
+    <p class="eyebrow text-rose-deep mb-5">Before you close this tab</p>
+    <h2 class="font-display display-tight text-[28px] sm:text-[40px] text-ink mb-8 leading-tight">
+      Tomorrow morning it starts again.
+    </h2>
+    <div class="space-y-3 mb-8 text-left">
+      <div class="flex items-center gap-4 bg-white rounded-xl px-5 py-4 border hairline shadow-soft">
+        <span class="text-[22px] flex-shrink-0">🪞</span>
+        <p class="text-[15px] text-ink/80">The 5:30 AM mirror check that makes your stomach drop</p>
+      </div>
+      <div class="flex items-center gap-4 bg-white rounded-xl px-5 py-4 border hairline shadow-soft">
+        <span class="text-[22px] flex-shrink-0">💻</span>
+        <p class="text-[15px] text-ink/80">The Zoom call where you tilt the laptop and pray no one mentions it</p>
+      </div>
+      <div class="flex items-center gap-4 bg-white rounded-xl px-5 py-4 border hairline shadow-soft">
+        <span class="text-[22px] flex-shrink-0">😶</span>
+        <p class="text-[15px] text-ink/80">The colleague who pauses and asks: <em>"Are you feeling okay?"</em></p>
+      </div>
+    </div>
+    <p class="text-[16px] text-ink/65 leading-relaxed max-w-md mx-auto">
+      The cortisol trap runs every night. The fluid pools. The question keeps coming. Doing nothing doesn't hold the line — it just means another morning exactly like this one.
+    </p>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
      SUMMER SALE FINAL CTA
 ═══════════════════════════════════════════ -->
 <section class="py-16 sm:py-20 bg-ink grain relative overflow-hidden">
@@ -966,10 +1109,10 @@
       <span class="eyebrow text-rose">Summer Sale — 50% Off · Today Only</span>
     </div>
     <h2 class="font-display display-tight text-[32px] sm:text-[46px] text-porcelain mb-4">
-      Stop tilting your laptop screen. Start your 15-minute protocol.
+      Here's how tomorrow morning goes differently.
     </h2>
     <p class="text-[15.5px] text-porcelain/65 max-w-md mx-auto mb-8 leading-relaxed">
-      You've read the mechanism. You understand why the creams failed. The 30-day guarantee means the only risk is doing nothing.
+      15 minutes. A reflection that matches how you actually feel. 50% off today. Full refund if it doesn't.
     </p>
 
     <!-- Price options -->
@@ -1080,6 +1223,20 @@
     document.getElementById('mainImage').alt = alt;
     document.querySelectorAll('.thumb-active').forEach(t => t.classList.remove('thumb-active'));
     btn.classList.add('thumb-active');
+  }
+
+  // ── Science tab switcher ──────────────────────
+  function switchTab(id, btn) {
+    document.querySelectorAll('.sci-panel').forEach(p => p.classList.add('hidden'));
+    document.querySelectorAll('.sci-tab').forEach(t => {
+      t.classList.remove('active');
+      t.classList.add('text-muted');
+    });
+    document.getElementById('tab-' + id).classList.remove('hidden');
+    if (btn) {
+      btn.classList.add('active');
+      btn.classList.remove('text-muted');
+    }
   }
 
   // ── Bundle selector ───────────────────────────
