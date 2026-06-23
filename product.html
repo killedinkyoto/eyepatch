@@ -177,39 +177,73 @@
 
     <!-- MEDIA COLUMN -->
     <div class="lg:sticky lg:top-24">
-      <!-- Main Image -->
-      <div class="relative rounded-2xl overflow-hidden shadow-lift bg-ink" id="mainImageWrap">
-        <img id="mainImage"
-          src="https://placehold.co/900x900/211A24/FBF8F5?text=Rejouva+France+Patches"
-          alt="Rejouva France Patches — clinical-grade under-eye hydrogel"
-          class="w-full object-cover" />
-        <div class="absolute inset-0 mix-blend-multiply pointer-events-none"
-          style="background:linear-gradient(150deg,rgba(193,124,132,.18),transparent 55%)"></div>
+
+      <!-- Carousel -->
+      <div class="relative rounded-2xl overflow-hidden shadow-lift bg-ink select-none" id="carouselWrap">
+
+        <!-- Slides -->
+        <div id="carouselTrack" class="flex transition-transform duration-500 ease-[cubic-bezier(.16,1,.3,1)] will-change-transform" style="touch-action:pan-y">
+          <div class="carousel-slide min-w-full aspect-square"><img src="brand_assets/images/1.png" alt="Rejouva France Patches — image 1" class="w-full h-full object-cover" /></div>
+          <div class="carousel-slide min-w-full aspect-square"><img src="brand_assets/images/2.png" alt="Rejouva France Patches — image 2" class="w-full h-full object-cover" /></div>
+          <div class="carousel-slide min-w-full aspect-square"><img src="brand_assets/images/3.png" alt="Rejouva France Patches — image 3" class="w-full h-full object-cover" /></div>
+          <div class="carousel-slide min-w-full aspect-square"><img src="brand_assets/images/4.png" alt="Rejouva France Patches — image 4" class="w-full h-full object-cover" /></div>
+          <div class="carousel-slide min-w-full aspect-square"><img src="brand_assets/images/5.png" alt="Rejouva France Patches — image 5" class="w-full h-full object-cover" /></div>
+          <div class="carousel-slide min-w-full aspect-square"><img src="brand_assets/images/6.png" alt="Rejouva France Patches — image 6" class="w-full h-full object-cover" /></div>
+          <div class="carousel-slide min-w-full aspect-square"><img src="brand_assets/images/7.png" alt="Rejouva France Patches — image 7" class="w-full h-full object-cover" /></div>
+          <div class="carousel-slide min-w-full aspect-square"><img src="brand_assets/images/8.png" alt="Rejouva France Patches — image 8" class="w-full h-full object-cover" /></div>
+          <div class="carousel-slide min-w-full aspect-square"><img src="brand_assets/images/9.png" alt="Rejouva France Patches — image 9" class="w-full h-full object-cover" /></div>
+        </div>
+
+        <!-- Gradient overlay -->
+        <div class="absolute inset-0 mix-blend-multiply pointer-events-none" style="background:linear-gradient(150deg,rgba(193,124,132,.18),transparent 55%)"></div>
+
         <!-- Sale badge -->
-        <div class="absolute top-4 left-4 bg-rose-deep text-porcelain text-[11px] font-700 tracking-wider uppercase px-3 py-1.5 rounded-full flex items-center gap-1.5">
+        <div class="absolute top-4 left-4 bg-rose-deep text-porcelain text-[11px] font-700 tracking-wider uppercase px-3 py-1.5 rounded-full flex items-center gap-1.5 z-10">
           <span class="sale-dot w-1.5 h-1.5 rounded-full bg-porcelain inline-block"></span>
           50% Off Today
         </div>
+
+        <!-- Prev arrow -->
+        <button id="carouselPrev" aria-label="Previous image"
+          class="absolute left-3 top-1/2 -translate-y-1/2 z-10 w-10 h-10 flex items-center justify-center rounded-full transition-opacity duration-200 focus-visible:outline-none"
+          style="background:rgba(255,255,255,.18);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.25)">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+
+        <!-- Next arrow -->
+        <button id="carouselNext" aria-label="Next image"
+          class="absolute right-3 top-1/2 -translate-y-1/2 z-10 w-10 h-10 flex items-center justify-center rounded-full transition-opacity duration-200 focus-visible:outline-none"
+          style="background:rgba(255,255,255,.18);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.25)">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+
+        <!-- Dot indicators -->
+        <div id="carouselDots" class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5 z-10">
+          <button class="carousel-dot w-1.5 h-1.5 rounded-full transition-all duration-300" style="background:rgba(255,255,255,.9);width:18px" data-index="0"></button>
+          <button class="carousel-dot w-1.5 h-1.5 rounded-full transition-all duration-300" style="background:rgba(255,255,255,.4)" data-index="1"></button>
+          <button class="carousel-dot w-1.5 h-1.5 rounded-full transition-all duration-300" style="background:rgba(255,255,255,.4)" data-index="2"></button>
+          <button class="carousel-dot w-1.5 h-1.5 rounded-full transition-all duration-300" style="background:rgba(255,255,255,.4)" data-index="3"></button>
+          <button class="carousel-dot w-1.5 h-1.5 rounded-full transition-all duration-300" style="background:rgba(255,255,255,.4)" data-index="4"></button>
+          <button class="carousel-dot w-1.5 h-1.5 rounded-full transition-all duration-300" style="background:rgba(255,255,255,.4)" data-index="5"></button>
+          <button class="carousel-dot w-1.5 h-1.5 rounded-full transition-all duration-300" style="background:rgba(255,255,255,.4)" data-index="6"></button>
+          <button class="carousel-dot w-1.5 h-1.5 rounded-full transition-all duration-300" style="background:rgba(255,255,255,.4)" data-index="7"></button>
+          <button class="carousel-dot w-1.5 h-1.5 rounded-full transition-all duration-300" style="background:rgba(255,255,255,.4)" data-index="8"></button>
+        </div>
       </div>
+
       <!-- Thumbnails -->
-      <div class="grid grid-cols-4 gap-3 mt-3">
-        <button onclick="setImage(this,'https://placehold.co/900x900/211A24/FBF8F5?text=Rejouva+Jar','Rejouva France Patches jar')"
-          class="rounded-xl overflow-hidden border-2 thumb-active hairline shadow-soft aspect-square">
-          <img src="https://placehold.co/200x200/211A24/FBF8F5?text=Jar" alt="Product jar" class="w-full h-full object-cover" />
-        </button>
-        <button onclick="setImage(this,'https://placehold.co/900x900/F4E6E4/9E4F58?text=Worn+%E2%80%94+Hands-Free','Worn hands-free during morning routine')"
-          class="rounded-xl overflow-hidden border-2 hairline shadow-soft aspect-square">
-          <img src="https://placehold.co/200x200/F4E6E4/9E4F58?text=Worn" alt="Patches worn" class="w-full h-full object-cover" />
-        </button>
-        <button onclick="setImage(this,'https://placehold.co/900x900/3A2F3E/C17C84?text=500+Da+Science','500-Dalton barrier science')"
-          class="rounded-xl overflow-hidden border-2 hairline shadow-soft aspect-square">
-          <img src="https://placehold.co/200x200/3A2F3E/C17C84?text=500+Da" alt="Science visual" class="w-full h-full object-cover" />
-        </button>
-        <button onclick="setImage(this,'https://placehold.co/900x900/F3EBE4/211A24?text=15+Min+Results','15-minute results')"
-          class="rounded-xl overflow-hidden border-2 hairline shadow-soft aspect-square">
-          <img src="https://placehold.co/200x200/F3EBE4/211A24?text=15+Min" alt="15 minute results" class="w-full h-full object-cover" />
-        </button>
+      <div class="grid grid-cols-5 gap-2 mt-3" id="carouselThumbs">
+        <button class="rounded-xl overflow-hidden border-2 thumb-active hairline shadow-soft aspect-square" data-index="0"><img src="brand_assets/images/1.png" alt="Image 1" class="w-full h-full object-cover" /></button>
+        <button class="rounded-xl overflow-hidden border-2 hairline shadow-soft aspect-square" data-index="1"><img src="brand_assets/images/2.png" alt="Image 2" class="w-full h-full object-cover" /></button>
+        <button class="rounded-xl overflow-hidden border-2 hairline shadow-soft aspect-square" data-index="2"><img src="brand_assets/images/3.png" alt="Image 3" class="w-full h-full object-cover" /></button>
+        <button class="rounded-xl overflow-hidden border-2 hairline shadow-soft aspect-square" data-index="3"><img src="brand_assets/images/4.png" alt="Image 4" class="w-full h-full object-cover" /></button>
+        <button class="rounded-xl overflow-hidden border-2 hairline shadow-soft aspect-square" data-index="4"><img src="brand_assets/images/5.png" alt="Image 5" class="w-full h-full object-cover" /></button>
+        <button class="rounded-xl overflow-hidden border-2 hairline shadow-soft aspect-square" data-index="5"><img src="brand_assets/images/6.png" alt="Image 6" class="w-full h-full object-cover" /></button>
+        <button class="rounded-xl overflow-hidden border-2 hairline shadow-soft aspect-square" data-index="6"><img src="brand_assets/images/7.png" alt="Image 7" class="w-full h-full object-cover" /></button>
+        <button class="rounded-xl overflow-hidden border-2 hairline shadow-soft aspect-square" data-index="7"><img src="brand_assets/images/8.png" alt="Image 8" class="w-full h-full object-cover" /></button>
+        <button class="rounded-xl overflow-hidden border-2 hairline shadow-soft aspect-square" data-index="8"><img src="brand_assets/images/9.png" alt="Image 9" class="w-full h-full object-cover" /></button>
       </div>
+
       <!-- Trust bar -->
       <div class="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 mt-5 text-[12px] text-muted">
         <span class="flex items-center gap-1.5">
@@ -437,10 +471,9 @@
           <div class="collapsible-body px-5 py-4 bg-bone/30">
             <ol class="text-[14px] text-ink/75 space-y-3">
               <li class="flex gap-3"><span class="font-display text-[18px] text-rose-deep font-600 leading-none mt-0.5 w-5 flex-shrink-0">1</span><span>Cleanse under-eye area. Pat completely dry — moisture weakens adhesion.</span></li>
-              <li class="flex gap-3"><span class="font-display text-[18px] text-rose-deep font-600 leading-none mt-0.5 w-5 flex-shrink-0">2</span><span>Remove patches using the included spatula, not your fingertips.</span></li>
-              <li class="flex gap-3"><span class="font-display text-[18px] text-rose-deep font-600 leading-none mt-0.5 w-5 flex-shrink-0">3</span><span>Apply below the eye, centered on the zygomatic arch. Press gently at the edges to lock in place.</span></li>
-              <li class="flex gap-3"><span class="font-display text-[18px] text-rose-deep font-600 leading-none mt-0.5 w-5 flex-shrink-0">4</span><span>Leave for 12–15 minutes. Get on with your morning. No need to lie still.</span></li>
-              <li class="flex gap-3"><span class="font-display text-[18px] text-rose-deep font-600 leading-none mt-0.5 w-5 flex-shrink-0">5</span><span>Remove. Tap in any remaining serum. Apply SPF, then concealer as usual. Expect a dramatically smoother base.</span></li>
+              <li class="flex gap-3"><span class="font-display text-[18px] text-rose-deep font-600 leading-none mt-0.5 w-5 flex-shrink-0">2</span><span>Apply below the eye, centered on the zygomatic arch. Press gently at the edges to lock in place.</span></li>
+              <li class="flex gap-3"><span class="font-display text-[18px] text-rose-deep font-600 leading-none mt-0.5 w-5 flex-shrink-0">3</span><span>Leave for 12–15 minutes. Get on with your morning. No need to lie still.</span></li>
+              <li class="flex gap-3"><span class="font-display text-[18px] text-rose-deep font-600 leading-none mt-0.5 w-5 flex-shrink-0">4</span><span>Remove. Tap in any remaining serum. Apply SPF, then concealer as usual. Expect a dramatically smoother base.</span></li>
             </ol>
             <p class="text-[12.5px] text-muted mt-4 leading-relaxed">Use once daily in the morning. Cumulative structural improvement appears over 4–8 weeks of consistent daily use. Daily use is not required for immediate drainage benefit — but it is required for long-term collagen rebuilding.</p>
           </div>
@@ -1220,13 +1253,55 @@
   }
   tick();
 
-  // ── Gallery image swap ────────────────────────
-  function setImage(btn, src, alt) {
-    document.getElementById('mainImage').src = src;
-    document.getElementById('mainImage').alt = alt;
-    document.querySelectorAll('.thumb-active').forEach(t => t.classList.remove('thumb-active'));
-    btn.classList.add('thumb-active');
-  }
+  // ── Product image carousel ────────────────────
+  (function () {
+    const track   = document.getElementById('carouselTrack');
+    const dots    = document.querySelectorAll('.carousel-dot');
+    const thumbs  = document.querySelectorAll('#carouselThumbs button');
+    const total   = 9;
+    let current   = 0;
+    let autoTimer = null;
+
+    function goTo(index) {
+      current = (index + total) % total;
+      track.style.transform = `translateX(-${current * 100}%)`;
+
+      dots.forEach((d, i) => {
+        d.style.background = i === current ? 'rgba(255,255,255,.9)' : 'rgba(255,255,255,.4)';
+        d.style.width      = i === current ? '18px' : '6px';
+      });
+
+      thumbs.forEach((t, i) => {
+        t.classList.toggle('thumb-active', i === current);
+      });
+    }
+
+    function startAuto() {
+      clearInterval(autoTimer);
+      autoTimer = setInterval(() => goTo(current + 1), 5000);
+    }
+
+    function resetAuto() { startAuto(); }
+
+    document.getElementById('carouselPrev').addEventListener('click', () => { goTo(current - 1); resetAuto(); });
+    document.getElementById('carouselNext').addEventListener('click', () => { goTo(current + 1); resetAuto(); });
+
+    dots.forEach(d => d.addEventListener('click', () => { goTo(+d.dataset.index); resetAuto(); }));
+    thumbs.forEach(t => t.addEventListener('click', () => { goTo(+t.dataset.index); resetAuto(); }));
+
+    // Touch / swipe
+    let touchStartX = 0;
+    let touchDeltaX = 0;
+    track.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; touchDeltaX = 0; }, { passive: true });
+    track.addEventListener('touchmove',  e => { touchDeltaX = e.touches[0].clientX - touchStartX; }, { passive: true });
+    track.addEventListener('touchend',   () => {
+      if (Math.abs(touchDeltaX) > 40) goTo(touchDeltaX < 0 ? current + 1 : current - 1);
+      resetAuto();
+    });
+
+    goTo(0);
+    startAuto();
+  })();
 
   // ── Science tab switcher ──────────────────────
   function switchTab(id, btn) {
