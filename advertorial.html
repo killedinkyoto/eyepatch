@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>How Two Mistakes Are Aging Your Eyes Faster Than the Rest of Your Face</title>
+<meta name="description" content="Your under-eyes don't behave like the rest of your face. And nothing you've tried has ever really fixed them. Here's why — and what actually works." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,ital,wght@9..144,0,400;9..144,0,500;9..144,0,600;9..144,0,700;9..144,1,400;9..144,1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: { extend: {
+      colors: {
+        ink:'#211A24','ink-soft':'#3A2F3E',porcelain:'#FBF8F5',bone:'#F3EBE4',
+        blush:'#F4E6E4',rose:'#C17C84','rose-deep':'#9E4F58',gold:'#BFA06A',muted:'#6E626A',
+      },
+      fontFamily:{ display:['Fraunces','serif'], sans:['Inter','system-ui','sans-serif'] },
+    }}
+  }
+</script>
+<style>
+  html{ scroll-behavior:smooth; }
+  body{ background:#FBF8F5; color:#211A24; -webkit-font-smoothing:antialiased; }
+  ::selection{ background:#C17C84; color:#FBF8F5; }
+  .grain::before{ content:"";position:absolute;inset:0;pointer-events:none;opacity:.05;mix-blend-mode:multiply;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+  .atmos-ink{ background:
+      radial-gradient(100% 80% at 15% 0%, rgba(193,124,132,.22) 0, transparent 55%),
+      radial-gradient(90% 90% at 90% 100%, rgba(191,160,106,.14) 0, transparent 55%), #211A24; }
+  .shadow-soft{ box-shadow:0 1px 2px rgba(33,26,36,.04),0 8px 24px -10px rgba(33,26,36,.12); }
+  .shadow-lift{ box-shadow:0 2px 4px rgba(158,79,88,.06),0 18px 50px -18px rgba(33,26,36,.28); }
+  .shadow-glow{ box-shadow:0 10px 30px -12px rgba(158,79,88,.45); }
+  .hairline{ border-color:rgba(33,26,36,.10); }
+  .display-tight{ letter-spacing:-.03em;line-height:1.06; }
+
+  /* Editorial article body */
+  .article{ font-size:19px; line-height:1.78; color:#2C2430; }
+  .article p{ margin:0 0 1.45em; }
+  .article p.dek{ font-size:21px; color:#574C5B; line-height:1.6; }
+  .article h2{ font-family:'Fraunces',serif; font-size:30px; line-height:1.18; letter-spacing:-.02em; color:#211A24; margin:1.9em 0 .55em; }
+  .article h3{ font-family:'Fraunces',serif; font-size:22px; color:#211A24; margin:1.6em 0 .4em; }
+  .article strong{ color:#211A24; }
+  .article em{ font-style:italic; }
+  .article a.inline{ color:#9E4F58; text-decoration:underline; text-underline-offset:2px; }
+  .dropcap::first-letter{ font-family:'Fraunces',serif; float:left; font-size:74px; line-height:.78; padding:6px 10px 0 0; color:#9E4F58; font-weight:600; }
+  .article ul{ margin:0 0 1.45em; padding-left:0; list-style:none; }
+  .article ul li{ position:relative; padding-left:1.4em; margin-bottom:.6em; }
+  .article ul li::before{ content:"—"; position:absolute; left:0; color:#C17C84; }
+
+  .pullquote{ font-family:'Fraunces',serif; font-size:27px; line-height:1.3; letter-spacing:-.01em; color:#211A24; }
+
+  .btn{ display:inline-flex;align-items:center;justify-content:center;gap:.55rem;font-weight:600;border-radius:999px;
+    transition:transform .4s cubic-bezier(.16,1,.3,1),box-shadow .4s,background-color .3s,color .3s;will-change:transform; }
+  .btn:focus-visible{ outline:2px solid #9E4F58;outline-offset:3px; }
+  .btn-primary{ background:#9E4F58;color:#FBF8F5; }
+  .btn-primary:hover{ transform:translateY(-2px);box-shadow:0 14px 34px -12px rgba(158,79,88,.6);background:#8C424B; }
+  .btn-primary:active{ transform:translateY(0); }
+
+  .reveal{ opacity:0;transform:translateY(20px);transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1); }
+  .reveal.in{ opacity:1;transform:none; }
+  @media (prefers-reduced-motion:reduce){ .reveal{opacity:1!important;transform:none!important} html{scroll-behavior:auto} }
+
+  /* Sale banner pulse */
+  @keyframes salePulse{ 0%,100%{ opacity:1 } 50%{ opacity:.7 } }
+  .sale-dot{ animation:salePulse 1.4s ease-in-out infinite; }
+
+  @media (max-width:767px){
+    .article{ font-size:17.5px; }
+    .article p.dek{ font-size:19px; }
+    .article h2{ font-size:24px; }
+    .article h3{ font-size:19px; }
+    .pullquote{ font-size:20px; }
+    .dropcap::first-letter{ font-size:56px; }
+    body{ padding-bottom:74px; }
+    /* Molecule chart: stack label + Da value vertically on mobile */
+    .mol-row{ flex-direction:column; gap:.35rem; }
+    .mol-label-wrap{ width:100%; }
+  }
+  .mobile-cta{ box-shadow:0 -8px 24px -12px rgba(33,26,36,.28); }
+</style>
+</head>
+<body class="font-sans antialiased overflow-x-hidden">
+
+<!-- Advertisement disclosure (Meta compliance) -->
+<div class="bg-bone text-muted text-center text-[11px] tracking-[.18em] uppercase py-2 px-4 border-b hairline">
+  Advertisement
+</div>
+
+<!-- Summer Sale Banner -->
+<div class="bg-rose-deep text-porcelain text-center py-3 px-4">
+  <div class="flex items-center justify-center flex-wrap gap-x-4 gap-y-1 text-[13.5px] font-600">
+    <span class="flex items-center gap-2">
+      <span class="sale-dot w-2 h-2 rounded-full bg-porcelain inline-block"></span>
+      Summer Sale — 50% Off Today Only
+    </span>
+    <span class="hidden sm:inline text-porcelain/70">·</span>
+    <span class="hidden sm:inline">Offer expires in: <strong id="saleCountdown" class="text-porcelain font-700">15:00</strong></span>
+  </div>
+</div>
+
+<!-- Editorial masthead -->
+<header class="border-b hairline bg-porcelain/90 backdrop-blur sticky top-0 z-40">
+  <div class="max-w-3xl mx-auto px-5 sm:px-6 h-14 flex items-center justify-between">
+    <a href="#top" class="font-display text-[19px] font-600 tracking-tight text-ink">The Periorbital Review</a>
+    <a href="index.html" class="text-[13.5px] font-600 text-rose-deep hover:underline">See the patches →</a>
+  </div>
+</header>
+
+<main id="top">
+
+<article>
+  <!-- Article header -->
+  <div class="max-w-3xl mx-auto px-5 sm:px-6 pt-12 pb-6">
+    <p class="text-[12px] font-600 tracking-[.16em] uppercase text-rose-deep mb-5 reveal">Dermatology · Skin Science</p>
+    <h1 class="font-display display-tight text-[34px] sm:text-[46px] text-ink mb-4 reveal">
+      How Two Mistakes Are Aging Your Eyes Faster Than the Rest of Your Face
+    </h1>
+    <p class="font-display text-[20px] sm:text-[24px] text-muted mb-6 reveal" style="font-style:italic;letter-spacing:-.01em;line-height:1.3">
+      And Why Smart, Successful Women Are The Ones Making Both
+    </p>
+    <div class="flex flex-wrap items-center gap-x-4 gap-y-2 text-[13.5px] text-muted reveal border-t border-b hairline py-4">
+      <span>By <strong class="text-ink font-600">Dr. Hélène Moreau</strong>, 20+ Years Writing About Clinical Skincare</span>
+      <span class="w-1 h-1 rounded-full bg-muted/50"></span>
+      <span>June 20, 2026</span>
+      <span class="w-1 h-1 rounded-full bg-muted/50"></span>
+      <span>11 min read</span>
+    </div>
+  </div>
+
+  <figure class="max-w-3xl mx-auto px-5 sm:px-6 mb-10 reveal">
+    <div class="relative rounded-2xl overflow-hidden shadow-lift">
+      <img src="images/img-01-hero-before-after.webp" alt="Before and after: under-eye appearance at Week 1 compared to Week 12 with Rejouva patches" class="w-full object-cover" />
+      <div class="absolute inset-0 mix-blend-multiply" style="background:linear-gradient(150deg,rgba(193,124,132,.22),transparent 55%)"></div>
+    </div>
+    <figcaption class="text-[12.5px] text-muted mt-3">Week 1 vs. Week 12. Same woman. Same lighting. No filters.</figcaption>
+  </figure>
+
+  <!-- Body: intro -->
+  <div class="max-w-2xl mx-auto px-5 sm:px-6 article reveal">
+
+    <p class="dropcap">I've written about skin for two decades.</p>
+
+    <p>I've interviewed dermatologists. I've read the studies most brands hope you never find.</p>
+
+    <p>And there's one complaint I hear more than any other.</p>
+
+    <p>Not wrinkles. Not sagging.</p>
+
+    <p><strong>Under-eye bags.</strong></p>
+
+    <p>The dark shadows. The morning puffiness. The hollow, tired look that shows up on every video call no matter how much sleep you got.</p>
+
+    <p>It's the thing women notice first in the mirror. And the thing they hate most in photos.</p>
+
+    <p>And here's what almost no one will tell you:</p>
+
+    <p>Your under-eyes don't behave like the rest of your face. They follow their own rules.</p>
+
+    <p><strong>And worst of all — nothing you've tried has ever really fixed them.</strong></p>
+
+    <p>The eye creams. The cooling rollers. The hydrogel patches that slid down your cheek. The $150 serum in the heavy glass jar.</p>
+
+    <p>If any of them had worked, you wouldn't be here.</p>
+
+    <p>Reading yet another article about how to freshen up your eye area.</p>
+
+    <p>But if you've been through this cycle…</p>
+
+    <p>Spending your hard earned money, getting your hopes up, just to end up disappointed…</p>
+
+    <p>Then I need you to hear something.</p>
+
+    <p><strong>It's not your fault.</strong></p>
+
+    <p>You've been trying to solve the right problem with the wrong approach.</p>
+
+    <p>And there are two specific mistakes responsible for keeping those eyebags from disappearing…</p>
+
+  </div>
+
+  <!-- MISTAKE #1 -->
+  <div class="max-w-2xl mx-auto px-5 sm:px-6 article reveal">
+
+    <h2><span class="text-rose-deep">Mistake #1:</span> You're Putting Cream On Top Of A Problem That Lives Underneath</h2>
+
+  </div>
+
+  <figure class="max-w-3xl mx-auto px-5 sm:px-6 my-8 reveal">
+    <div class="relative rounded-2xl overflow-hidden shadow-lift">
+      <img src="images/img-02-skin-barrier-diagram.webp" alt="Diagram showing how large cream molecules cannot pass through the skin barrier and reach the dermis" class="w-full object-cover" />
+    </div>
+  </figure>
+
+  <div class="max-w-2xl mx-auto px-5 sm:px-6 article reveal">
+
+    <p>This is the big one.</p>
+
+    <p>And it's the reason the entire eye cream industry has quietly been failing you.</p>
+
+    <p>There's a rule in skincare science. It's called the <strong>500-Dalton Rule.</strong></p>
+
+    <p>A Dalton is just how much a molecule weighs.</p>
+
+    <p>And the rule is simple: for an ingredient to actually pass through your skin and reach the living tissue underneath, it has to weigh <strong>less than 500 Daltons.</strong></p>
+
+    <p>Bigger than that? It can't get in. Physically. It sits on the surface, does a little temporary hydrating, and rinses off in the shower.</p>
+
+    <p>Now here's the uncomfortable part.</p>
+
+    <p>Almost every eye cream on the market — including the expensive ones — is built on heavy molecules that weigh <strong>thousands</strong> of Daltons.</p>
+
+    <p>Thousands.</p>
+
+    <p>They were never going to reach the place where your under-eye structure actually lives. Not because they're cheap. Because of physics.</p>
+
+    <p>It's a couch trying to fit through a mail slot.</p>
+
+    <p>So every single morning, you've been treating the roof… while the basement keeps flooding.</p>
+
+    <p>That's mistake number one.</p>
+
+    <p>Mistake number two is the one that explains why this got so much worse in your forties.</p>
+
+  </div>
+
+  <!-- MISTAKE #2 -->
+  <div class="max-w-2xl mx-auto px-5 sm:px-6 article reveal">
+
+    <h2><span class="text-rose-deep">Mistake #2:</span> You're Asking Exhausted Cells To Rebuild — With No Fuel Left</h2>
+
+    <p>This is the one that breaks my heart...</p>
+
+    <p>This woman wrote me a <strong>physical letter</strong>. By hand. Stamp and everything:</p>
+
+    <p class="italic text-ink-soft">"I've tried eye products from A to Z... From expensive to super expensive... But none of them seem to work!"</p>
+
+    <p>Then a picture of her.</p>
+
+    <p>And her face... She just felt so defeated. Like nothing was built for <strong>her</strong>, and that others who tried the same thing just got lucky.</p>
+
+    <p>She started to give up. Accept that her "golden days" were over.</p>
+
+    <p>But here's what she doesn't realize:</p>
+
+    <h3>The cells under your eyes are tired. Not figuratively. Literally.</h3>
+
+  </div>
+
+  <figure class="max-w-3xl mx-auto px-5 sm:px-6 my-8 reveal">
+    <div class="relative rounded-2xl overflow-hidden shadow-lift">
+      <img src="images/img-03-mistake2-blue-light.webp" alt="Woman lying in bed at night, phone screen casting blue light on her face, visible under-eye bags" class="w-full object-cover" />
+      <div class="absolute inset-0 mix-blend-multiply" style="background:linear-gradient(150deg,rgba(193,124,132,.18),transparent 55%)"></div>
+    </div>
+  </figure>
+
+  <div class="max-w-2xl mx-auto px-5 sm:px-6 article reveal">
+
+    <p>Repairing skin from scratch takes energy. A lot of it.</p>
+
+    <p>And here's where that energy went.</p>
+
+    <p>The blue light from your screen late at night delays your sleep hormone by up to 90 minutes. So your body never fully powers down on schedule. The stress hormone that's supposed to fall at night stays high instead.</p>
+
+    <p>And high nighttime stress hormone does one specific thing: it makes the tiny vessels under your eyes leaky.</p>
+
+    <p>So while you sleep — flat, still, nothing moving the fluid along — it leaks out and pools in the loose skin under your eyes.</p>
+
+    <p><strong>That's your morning bag.</strong> </p>
+
+    <p>Layer on years of short sleep, and the collagen drop-off that starts in perimenopause, and those repair cells simply run out of fuel.</p>
+
+    <p>So even the rare ingredient that <em>does</em> get in arrives and asks an exhausted cell to build something from nothing.</p>
+
+    <p>And the cell just… can't.</p>
+
+    <p>It's like handing flour and a sack of wheat to someone who hasn't slept in three days and asking them to bake bread from scratch. They have the instructions. They don't have the energy.</p>
+
+    <p>That's mistake number two. Every eye cream you've tried is shouting repair instructions at cells that have no fuel to follow them. And none of them can drain the fluid that's already pooled there.</p>
+
+    <p>The good news? None of this is permanent. The cells can be re-fueled. The fluid can be drained. You just need something that does both. And no cream on Earth can.</p>
+
+  </div>
+
+  <!-- Image: what's happening under the skin -->
+  <figure class="max-w-3xl mx-auto px-5 sm:px-6 my-10 reveal">
+    <div class="relative rounded-2xl overflow-hidden shadow-lift">
+      <img src="images/img-04-overnight-anatomy-diagram.webp" alt="Diagram showing fluid pooling and blood vessel dilation under the eye during sleep" class="w-full object-cover" />
+    </div>
+    <figcaption class="text-[12.5px] text-muted mt-3">When you sleep flat, fluid pools in the loose tissue under your eye. No muscle movement to drain it. By morning, you have bags.</figcaption>
+  </figure>
+
+  <!-- Pull quote -->
+  <div class="max-w-2xl mx-auto px-5 sm:px-6 my-9 reveal">
+    <div class="pl-5 border-l-2" style="border-color:#C17C84">
+      <p class="pullquote" style="margin:0">"Every eye cream you've tried is shouting repair instructions at cells that have no fuel to follow them."</p>
+    </div>
+  </div>
+
+  <!-- What Actually Reaches Under-Eye Skin -->
+  <div class="max-w-2xl mx-auto px-5 sm:px-6 article reveal">
+
+    <h2>So What Actually Reaches Under-Eye Skin?</h2>
+
+    <p>I went looking for the answer for a long time.</p>
+
+    <p>And I didn't find it in the beauty aisle.</p>
+
+    <p>I found it in hospital burn units.</p>
+
+    <p>It's called <strong>PDRN.</strong></p>
+
+    <p>In plain terms: purified DNA fragments, from salmon, that are close enough to ours that our cells recognize them and use them.</p>
+
+    <p>For decades, regenerative medicine has used PDRN to heal the hard cases — burns, skin grafts, even diabetic foot ulcers that wouldn't close. Tissue too damaged and too exhausted to heal on its own.</p>
+
+    <p>Here's why it works where creams can't.</p>
+
+    <p>Instead of asking a tired cell to build repair material from scratch, PDRN hands the cell the parts <strong>pre-made.</strong></p>
+
+    <p>Scientists call it the <strong>Salvage Pathway.</strong></p>
+
+    <p>The cell doesn't have to find the energy. It just gets handed the dough, ready to bake. It repairs. It just doesn't have to fight for the fuel to do it.</p>
+
+    <p>And when PDRN is paired with a special "pink collagen" engineered small enough — between 100 and 243 Daltons — it slips right past that 500-Dalton barrier.</p>
+
+    <p>It actually gets in.</p>
+
+    <p>For the first time, I was looking at something that didn't sit on the roof.</p>
+
+    <p>It went into the building.</p>
+
+  </div>
+
+  <!-- Image: Clinical PDRN origin -->
+  <figure class="max-w-3xl mx-auto px-5 sm:px-6 my-10 reveal">
+    <div class="relative rounded-2xl overflow-hidden shadow-lift">
+      <img src="images/img-05-pdrn-clinical-vial.webp" alt="Clinical context showing PDRN's origins in hospital wound care and burn treatment" class="w-full object-cover" />
+      <div class="absolute inset-0" style="background:linear-gradient(to top, rgba(33,26,36,.5), transparent 50%);"></div>
+      <div class="absolute inset-0 mix-blend-multiply" style="background:linear-gradient(150deg,rgba(193,124,132,.18),transparent 55%)"></div>
+    </div>
+    <figcaption class="text-[12.5px] text-muted mt-3">PDRN was used in hospital burn units and wound care for decades before dermatologists adapted it for periorbital restoration.</figcaption>
+  </figure>
+
+  <!-- But There Was Still One Problem -->
+  <div class="max-w-2xl mx-auto px-5 sm:px-6 article reveal">
+
+    <h2>But There Was Still One Problem…</h2>
+
+    <p>Signaling repair is wonderful.</p>
+
+    <p>But it doesn't drain a swamp.</p>
+
+    <p>The fluid that's already pooled under your eyes has to physically go somewhere — pushed back into your lymphatic system, where it belongs.</p>
+
+    <p>A serum can't do that.</p>
+
+    <p>A patch can.</p>
+
+    <p>A non-slip hydrogel patch does two jobs at the exact same time.</p>
+
+    <p>It carries the PDRN and the tiny collagen <strong>into</strong> the skin… and its own gentle weight presses the pooled fluid <strong>out.</strong></p>
+
+    <p>The cooling makes the dark vessels constrict, which clears the shadow.</p>
+
+    <p>In. And out. At once. Hands-free, while you do everything else.</p>
+
+    <p>That's the whole reason it had to be a patch — not another cream.</p>
+
+  </div>
+
+  <!-- Introducing Rejouva -->
+  <div class="max-w-2xl mx-auto px-5 sm:px-6 article reveal">
+    <h2>Introducing Rejouva — The Under-Eye Patch That Treats The Cause, Not The Surface</h2>
+  </div>
+
+  <!-- Product image -->
+  <figure class="max-w-3xl mx-auto px-5 sm:px-6 my-10 reveal">
+    <div class="relative rounded-2xl overflow-hidden shadow-lift">
+      <img src="images/img-08-product-jar.webp" alt="Rejouva France under-eye patches in their jar, showing the dense pink gel" class="w-full object-cover" />
+      <div class="absolute inset-0 mix-blend-multiply" style="background:linear-gradient(150deg,rgba(33,26,36,.12),transparent 60%)"></div>
+    </div>
+    <figcaption class="text-[12.5px] text-muted mt-3">Rejouva France Patches — engineered to get in, and drain out, at the same time.</figcaption>
+  </figure>
+
+  <div class="max-w-2xl mx-auto px-5 sm:px-6 article reveal">
+
+    <p>Here's exactly what makes Rejouva different.</p>
+
+  </div>
+
+  <!-- Ingredient breakdown cards -->
+  <div class="max-w-2xl mx-auto px-5 sm:px-6 my-8 reveal">
+    <div class="space-y-4">
+
+      <div class="rounded-2xl bg-bone border hairline p-6">
+        <p class="text-[11px] font-700 tracking-[.16em] uppercase text-rose-deep mb-2">Ingredient 01</p>
+        <p class="font-display text-[20px] text-ink mb-3" style="letter-spacing:-.01em">PDRN (Salmon Polynucleotides) — the fuel</p>
+        <p class="text-[16px] text-ink/75 leading-relaxed">Purified to over 95%. This is the part that re-energizes tired cells through the Salvage Pathway, so they can finally repair the structure that's been breaking down. It's the same class of ingredient regenerative clinics have trusted for years. Most eye creams don't contain it. The ones that do can't get it deep enough to matter.</p>
+      </div>
+
+      <div class="rounded-2xl bg-bone border hairline p-6">
+        <p class="text-[11px] font-700 tracking-[.16em] uppercase text-rose-deep mb-2">Ingredient 02</p>
+        <p class="font-display text-[20px] text-ink mb-3" style="letter-spacing:-.01em">Pink Collagen (100–243 Daltons) — the part that actually gets in</p>
+        <p class="text-[16px] text-ink/75 leading-relaxed">Engineered small enough to pass the 500-Dalton barrier, where it signals your skin to rebuild its own collagen — up to a <strong class="text-ink">184% increase</strong> in dermal density. Not sitting on top. Underneath. Where the problem lives.</p>
+      </div>
+
+      <div class="rounded-2xl bg-bone border hairline p-6">
+        <p class="text-[11px] font-700 tracking-[.16em] uppercase text-rose-deep mb-2">The Delivery System</p>
+        <p class="font-display text-[20px] text-ink mb-3" style="letter-spacing:-.01em">The Hydrogel Patch Itself — the drain</p>
+        <p class="text-[16px] text-ink/75 leading-relaxed">This is the piece no cream can replicate. Gentle, continuous compression pushes the pooled morning fluid out of the tissue. Evaporative cooling clears the dark vascular shadow. The bag drains while the repair happens. A high-grip, non-slip design locks onto your cheekbone so you can pack lunches, answer emails, and get ready — completely hands-free. No lying flat for 20 minutes. No sliding. No flaking. No pilling under your concealer.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Patch lifestyle image -->
+  <figure class="max-w-3xl mx-auto px-5 sm:px-6 my-10 reveal">
+    <div class="relative rounded-2xl overflow-hidden shadow-lift">
+      <img src="images/img-06-morning-routine-lifestyle.webp" alt="Woman wearing Rejouva patches while going about her morning routine — making coffee, reviewing notes" class="w-full object-cover" />
+      <div class="absolute inset-0 mix-blend-multiply" style="background:linear-gradient(150deg,rgba(33,26,36,.12),transparent 60%)"></div>
+    </div>
+    <figcaption class="text-[12.5px] text-muted mt-3">The dense gel locks onto your cheekbone. Pack lunch. Make coffee. Review your notes. It won't move.</figcaption>
+  </figure>
+
+  <!-- Objection: Salmon DNA? -->
+  <div class="max-w-2xl mx-auto px-5 sm:px-6 article reveal">
+
+    <h2>"But Wait — Salmon DNA? Near My Eyes?"</h2>
+
+    <p>I had the same reaction. So let me be clear about this.</p>
+
+    <p>If you've ever tried a retinol or high-dose vitamin C patch, you might know the feeling — the redness, the stinging, the burning across thin under-eye skin within minutes. Some women have had that happen on the worst possible morning.</p>
+
+    <p>PDRN is the opposite of that.</p>
+
+    <p>It's purified to over 95%, and it's free of the active proteins and peptides that trigger those reactions. That's what makes it biocompatible. No stinging. No burning. No harsh retinol.</p>
+
+    <p>It's not a chemical your skin has to tolerate. It's a building block your skin already recognizes.</p>
+
+  </div>
+
+  <!-- Here's The Best Part -->
+  <div class="max-w-2xl mx-auto px-5 sm:px-6 article reveal">
+
+    <h2>Here's The Best Part</h2>
+
+    <p>You don't need a 10-step routine.</p>
+
+    <p>You press the patches on. You do your morning — coffee, emails, getting the kids out the door. You peel them off.</p>
+
+    <p>Done. Less than your shower takes.</p>
+
+  </div>
+
+  <!-- Simplified routine block -->
+  <div class="max-w-2xl mx-auto px-5 sm:px-6 my-10 reveal">
+    <div class="rounded-2xl bg-bone border hairline p-7 sm:p-9">
+      <p class="text-[12px] font-700 tracking-[.16em] uppercase text-rose-deep mb-6">Just the two things your under-eyes have actually needed this whole time</p>
+      <div class="space-y-4">
+        <div class="flex items-start gap-4">
+          <div class="w-1.5 h-1.5 rounded-full mt-2.5 flex-shrink-0" style="background:#C17C84"></div>
+          <p class="text-[17px] leading-relaxed text-ink/80">The repair signal — <em>in.</em></p>
+        </div>
+        <div class="flex items-start gap-4">
+          <div class="w-1.5 h-1.5 rounded-full mt-2.5 flex-shrink-0" style="background:#C17C84"></div>
+          <p class="text-[17px] leading-relaxed text-ink/80">The trapped fluid — <em>out.</em></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- If You're Over 45 -->
+  <div class="max-w-2xl mx-auto px-5 sm:px-6 article reveal">
+
+    <h2>If You're Over 45 And Your Under-Eyes Look Tired No Matter What You Do — This Is For You</h2>
+
+    <p>It doesn't matter how little you sleep.</p>
+
+    <p>It doesn't matter how many creams have already let you down.</p>
+
+    <p>It doesn't matter whether your bags are "genetic," hormonal, or just twenty years of early mornings and late nights.</p>
+
+    <p>The mechanism is the same. And so is the fix.</p>
+
+  </div>
+
+  <!-- Personal transformation story -->
+  <div class="max-w-2xl mx-auto px-5 sm:px-6 article reveal">
+
+    <h2>I Got Rejouva To Fix My Eye Bags. What Surprised Me More Was Everything Else.</h2>
+
+  </div>
+
+  <figure class="max-w-3xl mx-auto px-5 sm:px-6 my-8 reveal">
+    <div class="relative rounded-2xl overflow-hidden shadow-lift">
+      <img src="images/img-07-transformation-video-call.webp" alt="Woman on a video call, camera on, looking confident without the blur filter" class="w-full object-cover" />
+      <div class="absolute inset-0 mix-blend-multiply" style="background:linear-gradient(150deg,rgba(33,26,36,.10),transparent 60%)"></div>
+    </div>
+  </figure>
+
+  <div class="max-w-2xl mx-auto px-5 sm:px-6 article reveal">
+
+    <p>I ordered it for one reason. The bags.</p>
+
+    <p>To stop looking exhausted on camera when I felt fine.</p>
+
+    <p>And the bags did soften. By the second week my concealer stopped creasing — because it finally had a smooth base to sit on instead of a hollow to fall into.</p>
+
+    <p>But what happened next went further than the mirror.</p>
+
+  </div>
+
+  <!-- Pull quote: teammate moment -->
+  <div class="max-w-2xl mx-auto px-5 sm:px-6 my-9 reveal">
+    <div class="pl-5 border-l-2" style="border-color:#C17C84">
+      <p class="pullquote" style="margin:0">"There's a woman on my team who used to ask me, almost every week: 'Are you doing okay? You look tired.' She meant well. It made me feel small every single time. And one week, I realized she'd stopped asking."</p>
+    </div>
+  </div>
+
+  <div class="max-w-2xl mx-auto px-5 sm:px-6 article reveal">
+
+    <p>A few weeks after that, I noticed I'd stopped turning on the "touch up my appearance" filter before calls. I stopped angling my face away from the webcam. I caught my reflection on a Zoom waiting screen — overhead lighting, no makeup yet — and didn't flinch.</p>
+
+    <p>That's the part that gets me, still.</p>
+
+    <p>Nobody said "you look younger." Nobody complimented my skin.</p>
+
+    <p>The comments just… stopped.</p>
+
+    <p>And that quiet — the absence of that one humiliating question — was the thing I'd actually wanted the whole time.</p>
+
+    <p>I wasn't sleeping more. I just didn't look like the tiredness was winning anymore.</p>
+
+    <p>That was the moment I knew this was different.</p>
+
+  </div>
+
+  <!-- Sale CTA block -->
+  <div class="max-w-2xl mx-auto px-4 sm:px-6 mt-12 reveal">
+    <div class="rounded-2xl atmos-ink grain relative overflow-hidden text-porcelain p-6 sm:p-10">
+
+      <!-- Sale badge -->
+      <div class="flex items-center gap-2 mb-5">
+        <span class="sale-dot w-2 h-2 rounded-full bg-rose inline-block"></span>
+        <span class="text-[11.5px] font-700 tracking-[.16em] uppercase text-rose">Summer Sale — 50% Off</span>
+      </div>
+
+      <div class="rounded-xl overflow-hidden mb-6" style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.10)">
+        <img src="images/img-08-product-jar.webp" alt="Rejouva France Patches product photo" class="w-full object-cover" />
+      </div>
+
+      <p class="font-display display-tight text-[26px] sm:text-[32px] mb-2">Try Rejouva For Yourself — At Zero Risk</p>
+      <p class="text-[15.5px] text-porcelain/75 max-w-md mb-5">Rejouva comes with a <strong class="text-porcelain">30-day money-back guarantee.</strong> Wear the patches through your morning routine. If your under-eyes aren't visibly less puffy, less shadowed, and easier to work with — send it back. You pay nothing. No empty-jar nonsense. No fine print.</p>
+
+      <!-- Batch warning -->
+      <div class="mb-6 rounded-xl bg-white/8 border border-white/12 px-5 py-4">
+        <p class="text-[13.5px] text-porcelain/80 leading-relaxed">Rejouva is made in small, sealed batches — specifically to keep the PDRN active. When one's gone, the next is weeks out. If it's in stock now, get it now.</p>
+      </div>
+
+      <!-- Price comparison -->
+      <div class="flex flex-wrap gap-x-8 gap-y-3 mb-6">
+        <div class="text-center">
+          <p class="text-[11.5px] text-porcelain/50 uppercase tracking-wide mb-1">Trial · 1 jar</p>
+          <p class="text-[13px] text-porcelain/40 line-through">$158</p>
+          <p class="font-display text-[28px] leading-none text-porcelain font-600">$79</p>
+        </div>
+        <div class="text-center">
+          <p class="text-[11.5px] text-porcelain/50 uppercase tracking-wide mb-1">Restore · 3 jars</p>
+          <p class="text-[13px] text-porcelain/40 line-through">$354</p>
+          <p class="font-display text-[28px] leading-none text-porcelain font-600">$177</p>
+        </div>
+        <div class="text-center">
+          <p class="text-[11.5px] text-porcelain/50 uppercase tracking-wide mb-1">Renew · 6 jars</p>
+          <p class="text-[13px] text-porcelain/40 line-through">$588</p>
+          <p class="font-display text-[28px] leading-none text-porcelain font-600">$294</p>
+        </div>
+      </div>
+
+      <!-- Countdown -->
+      <div class="flex items-center gap-3 mb-7">
+        <span class="text-[13.5px] text-porcelain/70">Sale ends in:</span>
+        <span class="bg-white/10 border border-white/15 rounded-lg px-3 py-1.5 font-display text-[22px] leading-none font-600 text-porcelain" id="saleCountdownCta">15:00</span>
+      </div>
+
+      <a href="product.html" class="btn btn-primary px-7 py-3.5 text-[15.5px] bg-rose text-ink hover:bg-porcelain">See If Rejouva Is In Stock →</a>
+      <p class="text-[12px] text-porcelain/40 mt-4">30-day money-back guarantee · Free express shipping on 3+ jars</p>
+    </div>
+  </div>
+
+  <!-- Closing urgency paragraph -->
+  <div class="max-w-2xl mx-auto px-5 sm:px-6 article reveal mt-10 mb-4">
+    <p style="font-size:16px;color:#574C5B;line-height:1.8">Every morning you spend pressing concealer into a crease, the tissue underneath gets a little thinner. The pooling gets a little more practiced. The shadow gets a little more permanent. This doesn't hold still while you decide. It compounds. You've already spent years treating the roof. Try treating the building.</p>
+  </div>
+
+</article>
+
+</main>
+
+<!-- Sticky mobile CTA -->
+<div id="mobileCta" class="mobile-cta md:hidden fixed bottom-0 left-0 right-0 z-50 bg-porcelain/95 backdrop-blur border-t hairline px-4 py-2.5 flex items-center justify-between gap-3 translate-y-full transition-transform duration-500" style="transition-timing-function:cubic-bezier(.16,1,.3,1)">
+  <div class="leading-tight shrink-0">
+    <p class="text-[10.5px] text-rose-deep font-600 uppercase tracking-wide">50% Off Today</p>
+    <p class="text-[12px] text-ink">From <span class="font-700">$79</span> <span class="line-through text-muted text-[11px]">$158</span></p>
+  </div>
+  <a href="product.html" class="btn btn-primary px-5 py-3 text-[14.5px] flex-1 text-center">Claim Sale →</a>
+</div>
+
+<!-- Footer -->
+<footer class="border-t hairline bg-bone mt-16">
+  <div class="max-w-3xl mx-auto px-5 sm:px-6 py-10 text-[12.5px] text-muted leading-relaxed">
+    <p class="mb-3"><strong class="text-ink">Advertisement.</strong> This is a sponsored editorial. The author is a paid contributor. Individual results vary.</p>
+    <p class="mb-4">Rejouva is a cosmetic skincare product and is not intended to diagnose, treat, cure, or prevent any disease. These statements have not been evaluated by the FDA. Quoted statements are illustrative of common consumer experiences.</p>
+    <p>© 2026 Rejouva France. <a href="index.html" class="text-rose-deep hover:underline">rejouva.com</a></p>
+  </div>
+</footer>
+
+<script>
+  // Scroll reveal
+  const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.1,rootMargin:'0px 0px -6% 0px'});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  // Sticky mobile CTA after first scroll
+  const cta=document.getElementById('mobileCta');
+  function sync(){ cta.classList.toggle('translate-y-full', window.scrollY < window.innerHeight*0.6); }
+  window.addEventListener('scroll',sync,{passive:true}); sync();
+
+  // Sale countdown — 15 minutes from page load
+  (function(){
+    const END = Date.now() + 15 * 60 * 1000;
+    const els = [document.getElementById('saleCountdown'), document.getElementById('saleCountdownCta')];
+    function tick(){
+      const diff = Math.max(0, END - Date.now());
+      const m = Math.floor(diff / 60000);
+      const s = Math.floor((diff % 60000) / 1000);
+      const str = m + ':' + String(s).padStart(2,'0');
+      els.forEach(el => { if(el) el.textContent = str; });
+      if(diff > 0) requestAnimationFrame(tick);
+      else els.forEach(el => { if(el) { const target = el.closest?.('[id^="sale"]') || el; target.textContent = 'Expired'; } });
+    }
+    tick();
+  })();
+</script>
+
+</body>
+</html>

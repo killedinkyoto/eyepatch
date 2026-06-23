@@ -98,8 +98,9 @@
     html { scroll-behavior:auto; }
   }
 
-  /* Video placeholder 9:16 */
+  /* Video placeholder 9:16, capped on mobile */
   .video-placeholder { aspect-ratio:9/16; }
+  @media (max-width:639px) { .video-placeholder { aspect-ratio:3/4; } }
 
   /* Comparison table */
   .comp-check { color:#9E4F58; font-weight:700; }
@@ -145,8 +146,8 @@
     </span>
     <span class="text-porcelain/60">·</span>
     <span>Sale ends in: <strong id="saleCountdown" class="text-porcelain font-700 tabular-nums">15:00</strong></span>
-    <span class="text-porcelain/60">·</span>
-    <span class="text-porcelain/80">Free express shipping on 3+ jars</span>
+    <span class="hidden sm:inline text-porcelain/60">·</span>
+    <span class="hidden sm:inline text-porcelain/80">Free express shipping on 3+ jars</span>
   </div>
 </div>
 
@@ -676,10 +677,12 @@
     </div>
 
     <!-- Tab nav -->
-    <div class="flex gap-1.5 mb-7 bg-bone p-1.5 rounded-2xl max-w-xl mx-auto reveal">
-      <button class="sci-tab active flex-1 py-2.5 px-3 text-[13px] font-600 transition-all" onclick="switchTab('problem',this)">Why it happens</button>
-      <button class="sci-tab flex-1 py-2.5 px-3 text-[13px] font-600 transition-all text-muted" onclick="switchTab('creams',this)">Why creams fail</button>
-      <button class="sci-tab flex-1 py-2.5 px-3 text-[13px] font-600 transition-all text-muted" onclick="switchTab('fix',this)">How Rejouva works</button>
+    <div class="overflow-x-auto -mx-5 sm:mx-0 px-5 sm:px-0 pb-1 mb-7 reveal">
+      <div class="flex gap-1.5 bg-bone p-1.5 rounded-2xl w-max sm:w-auto sm:max-w-xl mx-auto min-w-full sm:min-w-0">
+        <button class="sci-tab active flex-1 py-2.5 px-3 text-[12px] sm:text-[13px] font-600 transition-all whitespace-nowrap" onclick="switchTab('problem',this)">Why it happens</button>
+        <button class="sci-tab flex-1 py-2.5 px-3 text-[12px] sm:text-[13px] font-600 transition-all text-muted whitespace-nowrap" onclick="switchTab('creams',this)">Why creams fail</button>
+        <button class="sci-tab flex-1 py-2.5 px-3 text-[12px] sm:text-[13px] font-600 transition-all text-muted whitespace-nowrap" onclick="switchTab('fix',this)">How Rejouva works</button>
+      </div>
     </div>
 
     <div class="reveal">
@@ -720,39 +723,39 @@
         <div class="bg-ink grain relative overflow-hidden rounded-2xl p-7 sm:p-9 text-porcelain">
           <p class="eyebrow text-rose mb-6">The 500-Dalton Rule — why nothing on your shelf can get inside your skin</p>
           <div class="space-y-5">
-            <div class="flex items-center gap-4">
-              <div class="w-40 flex-shrink-0">
-                <p class="text-[11.5px] text-porcelain/50 mb-0.5">Luxury eye cream collagen</p>
-                <p class="font-display text-[22px] text-porcelain/40 font-600 leading-none">300,000 Da</p>
+            <div class="flex items-center gap-3">
+              <div class="w-28 sm:w-40 flex-shrink-0">
+                <p class="text-[10.5px] sm:text-[11.5px] text-porcelain/50 mb-0.5">Luxury eye cream collagen</p>
+                <p class="font-display text-[18px] sm:text-[22px] text-porcelain/40 font-600 leading-none">300,000 Da</p>
               </div>
               <div class="flex-1 h-3 bg-white/10 rounded-full overflow-hidden">
                 <div class="h-full w-full rounded-full" style="background:linear-gradient(90deg,#3A2F3E,#6E626A)"></div>
               </div>
-              <span class="text-[12px] text-porcelain/35 w-20 text-right flex-shrink-0 leading-tight">Sits on surface</span>
+              <span class="text-[11px] text-porcelain/35 w-16 sm:w-20 text-right flex-shrink-0 leading-tight">On surface</span>
             </div>
-            <div class="flex items-center gap-4">
-              <div class="w-40 flex-shrink-0">
-                <p class="text-[11.5px] text-porcelain/50 mb-0.5">"Advanced" serum collagen</p>
-                <p class="font-display text-[22px] text-porcelain/40 font-600 leading-none">~3,000 Da</p>
+            <div class="flex items-center gap-3">
+              <div class="w-28 sm:w-40 flex-shrink-0">
+                <p class="text-[10.5px] sm:text-[11.5px] text-porcelain/50 mb-0.5">"Advanced" serum collagen</p>
+                <p class="font-display text-[18px] sm:text-[22px] text-porcelain/40 font-600 leading-none">~3,000 Da</p>
               </div>
               <div class="flex-1 h-3 bg-white/10 rounded-full overflow-hidden">
                 <div class="h-full rounded-full" style="width:38%;background:linear-gradient(90deg,#3A2F3E,#6E626A)"></div>
               </div>
-              <span class="text-[12px] text-porcelain/35 w-20 text-right flex-shrink-0 leading-tight">Still too big</span>
+              <span class="text-[11px] text-porcelain/35 w-16 sm:w-20 text-right flex-shrink-0 leading-tight">Still too big</span>
             </div>
             <div class="relative py-1.5">
               <div class="border-t-2 border-dashed" style="border-color:rgba(193,124,132,.55)"></div>
-              <span class="absolute -top-3 right-0 text-[11px] font-700 text-rose bg-ink-soft px-2.5 py-0.5 rounded-full whitespace-nowrap">500 Da — the skin barrier limit</span>
+              <span class="absolute -top-3 right-0 text-[10.5px] font-700 text-rose bg-ink-soft px-2.5 py-0.5 rounded-full whitespace-nowrap">500 Da — skin barrier limit</span>
             </div>
-            <div class="flex items-center gap-4">
-              <div class="w-40 flex-shrink-0">
-                <p class="text-[11.5px] text-rose mb-0.5">Rejouva Pink Collagen</p>
-                <p class="font-display text-[22px] text-rose font-600 leading-none">100–243 Da</p>
+            <div class="flex items-center gap-3">
+              <div class="w-28 sm:w-40 flex-shrink-0">
+                <p class="text-[10.5px] sm:text-[11.5px] text-rose mb-0.5">Rejouva Pink Collagen</p>
+                <p class="font-display text-[18px] sm:text-[22px] text-rose font-600 leading-none">100–243 Da</p>
               </div>
               <div class="flex-1 h-3 bg-white/10 rounded-full overflow-hidden">
                 <div class="h-full rounded-full" style="width:12%;background:linear-gradient(90deg,#C17C84,#9E4F58);box-shadow:0 0 8px rgba(193,124,132,.4)"></div>
               </div>
-              <span class="text-[12px] text-rose font-600 w-20 text-right flex-shrink-0 leading-tight">Gets inside ✓</span>
+              <span class="text-[11px] text-rose font-600 w-16 sm:w-20 text-right flex-shrink-0 leading-tight">Gets in ✓</span>
             </div>
           </div>
           <div class="mt-8 grid grid-cols-3 gap-3 text-center border-t border-white/10 pt-6">
